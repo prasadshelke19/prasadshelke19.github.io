@@ -169,6 +169,7 @@ h2 {
 .talk-item p {
     margin: 5px 0;
     line-height: 1.6;
+    word-wrap: break-word; /* Prevents long lines from overflowing */
 }
 
 .presentation-type {
@@ -222,6 +223,7 @@ h2 {
 .award-item p {
     margin: 5px 0;
     line-height: 1.6;
+    word-wrap: break-word; /* Prevents long lines from overflowing */
 }
 
 /* Footer Styling */
@@ -234,6 +236,10 @@ footer {
     border-top: 5px solid #fff; /* White border for contrast */
 }
 
+footer strong {
+    color: white; /* Ensure icons and labels are visible */
+}
+
 footer a {
     color: white;
     text-decoration: none;
@@ -242,15 +248,4 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-}
-
-/* Link Styling */
-a {
-    color: #6a11cb; /* Deep purple link color */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #2575fc; /* Bright blue on hover */
 }

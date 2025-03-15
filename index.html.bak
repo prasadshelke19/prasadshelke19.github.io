@@ -10,7 +10,7 @@
 <body>
     <!-- Profile Photo -->
     <div class="profile-photo">
-        <img src="images/prasad_picture.jpg" alt="Prasad Shelke" width="200" height="200">
+        <img src="C:/Users/shelkepr/OneDrive - Victoria University of Wellington - STAFF/Documents/Prasad_github/prasadshelke19.github.io/images/prasad_picture.jpg" alt="Prasad Shelke" width="200" height="200">
     </div>
 
     <!-- Header -->
@@ -41,85 +41,139 @@
         <h2>Publications</h2>
         <ul>
             <li>Shelke, P. and Renwick, J. A. (2025). <em>Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2.</em> <strong>Climate Dynamics</strong> (Under Review).</li>
+            <li>Shelke, P. and Renwick, J. A. (2025). <em>Disentangling Hemispheric Asymmetry in Simulating Heat Extremes under Warming Planet.</em> <strong>Nature Climate Change</strong> (In preparation).</li>
         </ul>
     </section>
 
     <!-- Conferences and Talks Section -->
     <section id="talks">
-    <h2>Conferences and Talks</h2>
-    <div class="talks-grid">
-        <!-- 2025 -->
-        <div class="talk-item">
-            <h3>European Geosciences Union - General Assembly 2025</h3>
-            <p><em>(April 2025, Vienna, Austria)</em></p>
-            <p>"<strong>Does ‘Blocking’ Shape the Future of Antarctic Heat Extremes?</strong>" <span class="presentation-type">(Oral Presentation)</span></p>
-        </div>
+        <h2>Conferences and Talks</h2>
+        <div class="talks-grid">
+            <!-- 2025 -->
+            <div class="talk-item">
+                <h3>European Geosciences Union - General Assembly 2025</h3>
+                <p><em>(April 2025, Vienna, Austria)</em></p>
+                <p>"<strong>Does ‘Blocking’ Shape the Future of Antarctic Heat Extremes?</strong>" <span class="presentation-type">(Oral Presentation)</span></p>
+            </div>
 
-        <!-- 2024 -->
-        <div class="talk-item">
-            <h3>Meteorological Society of New Zealand Annual Conference 2024</h3>
-            <p><em>(November 2024, Auckland, New Zealand)</em></p>
-            <p>"<strong>Is the Community Earth System Model up to the challenge of Southern Hemispheric blocking?</strong>" <span class="presentation-type">(Oral Presentation)</span></p>
-        </div>
+            <!-- 2024 -->
+            <div class="talk-item">
+                <h3>Meteorological Society of New Zealand Annual Conference 2024</h3>
+                <p><em>(November 2024, Auckland, New Zealand)</em></p>
+                <p>"<strong>Is the Community Earth System Model up to the challenge of Southern Hemispheric blocking?</strong>" <span class="presentation-type">(Oral Presentation)</span></p>
+            </div>
 
-        <div class="talk-item">
-            <h3>University of British Columbia</h3>
-            <p><em>(October 2024, Virtual)</em></p>
-            <p>"<strong>Present and Future Implications of Atmospheric Blocking in a Warming World</strong>" <span class="presentation-type">(Invited Talk)</span></p>
-        </div>
+            <div class="talk-item">
+                <h3>University of British Columbia</h3>
+                <p><em>(October 2024, Virtual)</em></p>
+                <p>"<strong>Present and Future Implications of Atmospheric Blocking in a Warming World</strong>" <span class="presentation-type">(Invited Talk)</span></p>
+            </div>
 
-        <div class="talk-item">
-            <h3>University of Colorado, Boulder</h3>
-            <p><em>(August 2024, Colorado, USA)</em></p>
-            <p>"<strong>Global Atmospheric Blocking: Present and Future Implications</strong>" <span class="presentation-type">(Invited Talk)</span></p>
-        </div>
+            <div class="talk-item">
+                <h3>University of Colorado, Boulder</h3>
+                <p><em>(August 2024, Colorado, USA)</em></p>
+                <p>"<strong>Global Atmospheric Blocking: Present and Future Implications</strong>" <span class="presentation-type">(Invited Talk)</span></p>
+            </div>
 
-        <div class="talk-item">
-            <h3>New Zealand Antarctic Society Mid-Winter Meeting 2024</h3>
-            <p><em>(June 2024, Wellington, New Zealand)</em></p>
-            <p>"<strong>Global Atmospheric Blocking: Present and Future Implications</strong>" <span class="presentation-type">(Invited Talk)</span></p>
-        </div>
+            <div class="talk-item">
+                <h3>New Zealand Antarctic Society Mid-Winter Meeting 2024</h3>
+                <p><em>(June 2024, Wellington, New Zealand)</em></p>
+                <p>"<strong>Global Atmospheric Blocking: Present and Future Implications</strong>" <span class="presentation-type">(Invited Talk)</span></p>
+            </div>
 
-        <div class="talk-item">
-            <h3>European Geosciences Union - General Assembly 2024</h3>
-            <p><em>(April 2024, Vienna, Austria)</em></p>
-            <p>"<strong>Are we missing future extreme events by ignoring less persistent blocking?</strong>" <span class="presentation-type">(Oral Presentation)</span></p>
-        </div>
+            <div class="talk-item">
+                <h3>European Geosciences Union - General Assembly 2024</h3>
+                <p><em>(April 2024, Vienna, Austria)</em></p>
+                <p>"<strong>Are we missing future extreme events by ignoring less persistent blocking?</strong>" <span class="presentation-type">(Oral Presentation)</span></p>
+            </div>
 
-        <div class="talk-item">
-            <h3>Blocking and Extreme Weather in Changing Climate Workshop - US CLIVAR</h3>
-            <p><em>(March 2024, Colorado, USA)</em></p>
-            <p>"<strong>Northern Hemispheric Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2</strong>" <span class="presentation-type">(Poster Presentation)</span></p>
-        </div>
+            <div class="talk-item">
+                <h3>Blocking and Extreme Weather in Changing Climate Workshop - US CLIVAR</h3>
+                <p><em>(March 2024, Colorado, USA)</em></p>
+                <p>"<strong>Northern Hemispheric Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2</strong>" <span class="presentation-type">(Poster Presentation)</span></p>
+            </div>
 
-        <!-- 2023 -->
-        <div class="talk-item">
-            <h3>American Geophysical Union - Fall Meeting 2023</h3>
-            <p><em>(December 2023, San Francisco, USA)</em></p>
-            <p>"<strong>Northern Hemispheric Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2</strong>" <span class="presentation-type">(Poster Presentation)</span></p>
-        </div>
+            <!-- 2023 -->
+            <div class="talk-item">
+                <h3>American Geophysical Union - Fall Meeting 2023</h3>
+                <p><em>(December 2023, San Francisco, USA)</em></p>
+                <p>"<strong>Northern Hemispheric Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2</strong>" <span class="presentation-type">(Poster Presentation)</span></p>
+            </div>
 
-        <div class="talk-item">
-            <h3>Meteorological Society of New Zealand Annual Conference 2023</h3>
-            <p><em>(November 2023, Wellington, New Zealand)</em></p>
-            <p>"<strong>Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2</strong>" <span class="presentation-type">(Oral Presentation)</span></p>
-        </div>
+            <div class="talk-item">
+                <h3>Meteorological Society of New Zealand Annual Conference 2023</h3>
+                <p><em>(November 2023, Wellington, New Zealand)</em></p>
+                <p>"<strong>Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2</strong>" <span class="presentation-type">(Oral Presentation)</span></p>
+            </div>
 
-        <!-- 2022 -->
-        <div class="talk-item">
-            <h3>European Research Course on Atmosphere Winter School</h3>
-            <p><em>(January 2022, Grenoble, France - Virtual)</em></p>
-            <p>"<strong>Regional 3D Atmosphere and Ocean Models to quantify the Impact of Oceanic Sources on the Regional Mercury Budget</strong>" <span class="presentation-type">(Poster Presentation)</span></p>
-        </div>
+            <!-- 2022 -->
+            <div class="talk-item">
+                <h3>European Research Course on Atmosphere Winter School</h3>
+                <p><em>(January 2022, Grenoble, France - Virtual)</em></p>
+                <p>"<strong>Regional 3D Atmosphere and Ocean Models to quantify the Impact of Oceanic Sources on the Regional Mercury Budget</strong>" <span class="presentation-type">(Poster Presentation)</span></p>
+            </div>
 
-        <!-- 2019 -->
-        <div class="talk-item">
-            <h3>National Space Science Symposium, India</h3>
-            <p><em>(January 2019, Pune, India)</em></p>
-            <p>"<strong>Impact of Satellite Altimeter Derived Ocean Mean Temperature of Nino 3.4 Region on Indian Summer Monsoon Rainfall</strong>" <span class="presentation-type">(Poster Presentation)</span></p>
+            <!-- 2019 -->
+            <div class="talk-item">
+                <h3>National Space Science Symposium, India</h3>
+                <p><em>(January 2019, Pune, India)</em></p>
+                <p>"<strong>Impact of Satellite Altimeter Derived Ocean Mean Temperature of Nino 3.4 Region on Indian Summer Monsoon Rainfall</strong>" <span class="presentation-type">(Poster Presentation)</span></p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- Honours and Awards Section -->
+    <section id="awards">
+        <h2>Honours and Awards</h2>
+        <div class="awards-grid">
+            <!-- 2024 -->
+            <div class="award-item">
+                <h3>Endowment Development Grant</h3>
+                <p><em>(April 2024)</em></p>
+                <p>Antarctic Research Centre, New Zealand</p>
+            </div>
+
+            <div class="award-item">
+                <h3>International Travel Grant</h3>
+                <p><em>(August 2024)</em></p>
+                <p>Meteorological Society of New Zealand</p>
+            </div>
+
+            <!-- 2023 -->
+            <div class="award-item">
+                <h3>Young Researcher Travel Grant 2023 (Winner)</h3>
+                <p><em>(September 2023)</em></p>
+                <p>Geosciences Society of New Zealand</p>
+            </div>
+
+            <div class="award-item">
+                <h3>International Conference Grant</h3>
+                <p><em>(October 2023)</em></p>
+                <p>Meteorological Society of New Zealand</p>
+            </div>
+
+            <!-- 2022 -->
+            <div class="award-item">
+                <h3>Wellington Doctoral Scholarship</h3>
+                <p><em>(December 2022)</em></p>
+                <p>Victoria University of Wellington, New Zealand</p>
+            </div>
+
+            <!-- 2021 -->
+            <div class="award-item">
+                <h3>Marie Skłodowska Curie Fellowship</h3>
+                <p><em>(January 2021)</em></p>
+                <p>European Commission <em>(Early Stage Researcher)</em></p>
+            </div>
+
+            <!-- 2019 -->
+            <div class="award-item">
+                <h3>Research Fellowship</h3>
+                <p><em>(July 2019)</em></p>
+                <p>Department of Science and Technology (Ministry of Earth Sciences), India</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Skills Section -->
     <section id="skills">
@@ -181,65 +235,12 @@
         </div>
     </section>
 
-    <!-- Honours and Awards Section -->
-    <section id="awards">
-    <h2>Honours and Awards</h2>
-    <div class="awards-grid">
-        <!-- 2024 -->
-        <div class="award-item">
-            <h3>Endowment Development Grant</h3>
-            <p><em>(April 2024)</em></p>
-            <p>Antarctic Research Centre, New Zealand</p>
-        </div>
-
-        <div class="award-item">
-            <h3>International Travel Grant</h3>
-            <p><em>(August 2024)</em></p>
-            <p>Meteorological Society of New Zealand</p>
-        </div>
-
-        <!-- 2023 -->
-        <div class="award-item">
-            <h3>Young Researcher Travel Grant 2023 (Winner)</h3>
-            <p><em>(September 2023)</em></p>
-            <p>Geosciences Society of New Zealand</p>
-        </div>
-
-        <div class="award-item">
-            <h3>International Conference Grant</h3>
-            <p><em>(October 2023)</em></p>
-            <p>Meteorological Society of New Zealand</p>
-        </div>
-
-        <!-- 2022 -->
-        <div class="award-item">
-            <h3>Wellington Doctoral Scholarship</h3>
-            <p><em>(December 2022)</em></p>
-            <p>Victoria University of Wellington, New Zealand</p>
-        </div>
-
-        <!-- 2021 -->
-        <div class="award-item">
-            <h3>Marie Skłodowska Curie Fellowship</h3>
-            <p><em>(January 2021)</em></p>
-            <p>European Commission <em>(Early Stage Researcher)</em></p>
-        </div>
-
-        <!-- 2019 -->
-        <div class="award-item">
-            <h3>Research Fellowship</h3>
-            <p><em>(July 2019)</em></p>
-            <p>Department of Science and Technology (Ministry of Earth Sciences), India</p>
-        </div>
-    </div>
-</section>
-
     <!-- Footer Section -->
     <footer>
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:Prasad.Shelke@vuw.ac.nz">Prasad.Shelke@vuw.ac.nz</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/prasad-shelke-121288135/">linkedin.com/in/prasad-shelke-121288135</a></p>
-        <p>X: <a href="https://x.com/PrasadBShelke">x.com/PrasadBShelke</a></p>
+        <p><strong>📧 Email:</strong> <a href="mailto:Prasad.Shelke@vuw.ac.nz">Prasad.Shelke@vuw.ac.nz</a></p>
+        <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/prasad-shelke-121288135/">linkedin.com/in/prasad-shelke-121288135</a></p>
+        <p><strong>🐦 X:</strong> <a href="https://x.com/PrasadBShelke">x.com/PrasadBShelke</a></p>
     </footer>
 </body>
 </html>
