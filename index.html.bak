@@ -95,6 +95,65 @@
     </ul>
 </section>
 
+<section id="skills">
+    <h2>Skills</h2>
+
+    <!-- Numerical Modeling -->
+    <div class="skill-category">
+        <h3>Numerical Modeling</h3>
+        <ul>
+            <li>Community Earth System Model (CESM)</li>
+            <li>Weather Research and Forecasting Model (WRF-ARW, WRF-CHEM, Polar-WRF)</li>
+            <li>Box Models (Sea-Spray Aerosol, Pollutant Transfer Model)</li>
+        </ul>
+    </div>
+
+    <!-- Scientific Languages -->
+    <div class="skill-category">
+        <h3>Scientific Languages</h3>
+        <ul>
+            <li>Python</li>
+            <li>FORTRAN</li>
+            <li>R Programming</li>
+            <li>Matlab/Simulink</li>
+            <li>NCL (NCAR Command Language)</li>
+        </ul>
+    </div>
+
+    <!-- Visualization and Analysis Tools -->
+    <div class="skill-category">
+        <h3>Visualization and Analysis Tools</h3>
+        <ul>
+            <li>Panoply</li>
+            <li>PyFerret (NOAA-PMEL)</li>
+            <li>GrADS</li>
+            <li>CDO (Climate Data Operators)</li>
+        </ul>
+    </div>
+
+    <!-- Artificial Intelligence and Machine Learning -->
+    <div class="skill-category">
+        <h3>Artificial Intelligence and Machine Learning</h3>
+        <ul>
+            <li>Artificial Neural Networks (ANN)</li>
+            <li>Convolutional Neural Networks (CNN)</li>
+            <li>Generalized Linear Models (GLMs)</li>
+            <li>Use of AI for Climate Science (Developing: Forecasting and Projections)</li>
+            <li>Data Clustering</li>
+        </ul>
+    </div>
+
+    <!-- High Performance Computing -->
+    <div class="skill-category">
+        <h3>High Performance Computing (HPC)</h3>
+        <ul>
+            <li>Derecho (NCAR, USA)</li>
+            <li>NeSI Supercomputer (New Zealand)</li>
+            <li>HPC-Aditya (India)</li>
+        </ul>
+    </div>
+</section>
+
 <section id="awards">
     <h2>Honours and Awards</h2>
     <ul>
