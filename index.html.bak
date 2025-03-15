@@ -45,7 +45,6 @@
         <h2>Publications</h2>
         <ul>
             <li>Shelke, P. and Renwick, J. A. (2025). <em>Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2.</em> <strong>Climate Dynamics</strong> (Under Review).</li>
-            <li>2 Manuscripts In Preparation (Updated on March - 2025)</li>			
         </ul>
     </section>
 
@@ -245,9 +244,9 @@
     <!-- Footer Section -->
     <footer>
         <h2 class="contact-header">Contact</h2>
-        <p><strong>📧 Email:</strong> <a href="mailto:Prasad.Shelke@vuw.ac.nz">Prasad.Shelke@vuw.ac.nz</a></p>
-        <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/prasad-shelke-121288135/">linkedin.com/in/prasad-shelke-121288135</a></p>
-        <p><strong>🐦 X:</strong> <a href="https://x.com/PrasadBShelke">x.com/PrasadBShelke</a></p>
+        <p><strong>📧 Email:</strong> <a href="mailto:Shelkepras@myvuw.ac.nz">Shelkepras@myvuw.ac.nz</a></p>
+        <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/prasad-shelke-121288135/">Prasad Shelke</a></p>
+        <p><strong>🐦 X:</strong> <a href="https://x.com/PrasadBShelke">PrasadBShelke</a></p>
     </footer>
 </body>
 </html>
