@@ -54,7 +54,11 @@
         <div class="talks-grid">
             <!-- 2025 -->
             <div class="talk-item">
-                <h3>European Geosciences Union - General Assembly 2025</h3>
+                <h3>
+				<a href="https://meetingorganizer.copernicus.org/EGU25/EGU25-14224.html" target="_blank">
+				European Geosciences Union - General Assembly 2025
+				</a>
+				</h3>
                 <p><em>(April 2025, Vienna, Austria)</em></p>
                 <p>"<strong>Does ‘Blocking’ Shape the Future of Antarctic Heat Extremes?</strong>" 
 				<span class="presentation-type">(Oral Presentation)</span></p>
@@ -87,7 +91,7 @@
 
             <div class="talk-item">
                 <h3>
-					<a href="https://usclivar.org/meetings/blocking-extreme-weather" target="_blank">
+					<a href="https://meetingorganizer.copernicus.org/EGU24/EGU24-10982.html" target="_blank">
 					European Geosciences Union - General Assembly 2024
 					</a>
 				</h3>

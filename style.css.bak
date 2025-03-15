@@ -29,13 +29,28 @@ header p {
     font-weight: 400;
 }
 
-/* Profile Photo Styling */
-.profile-photo {
-    text-align: center;
-    margin-bottom: 20px;
+/* About Section Styling */
+#about {
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
 }
 
-.profile-photo img {
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between text and photo */
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+}
+
+.about-text {
+    flex: 1; /* Takes up available space */
+}
+
+.about-photo img {
     border-radius: 50%; /* Circular photo */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
     border: 3px solid #fff; /* White border around the photo */
@@ -44,84 +59,44 @@ header p {
     object-fit: cover; /* Ensures the image fits perfectly */
 }
 
-/* Section Styling */
-section {
-    margin: 40px auto; /* Increased spacing between sections */
+/* Research Section Styling */
+#research {
+    margin: 40px auto;
     max-width: 800px;
     padding: 30px;
     background: white;
-    border-radius: 10px; /* Rounded corners for a modern look */
+    border-radius: 10px; /* Rounded corners */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
-section:hover {
-    transform: translateY(-5px); /* Slight upward movement on hover */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+#research ul {
+    list-style-type: disc; /* Bullet points */
+    margin-left: 20px;
 }
 
-h2 {
-    color: #6a11cb; /* Deep purple heading color */
-    border-bottom: 2px solid #6a11cb; /* Matching border */
-    padding-bottom: 10px;
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-/* Skills Section Styling */
-#skills {
-    background: linear-gradient(135deg, #f3ecf6, #eef5ff); /* Subtle gradient background */
-    border: 1px solid #ddd; /* Light border */
-    padding: 30px;
-    position: relative;
-}
-
-#skills::before {
-    content: "🛠️"; /* Icon before the section */
-    position: absolute;
-    top: -15px;
-    left: 20px;
-    font-size: 2em;
-    color: #6a11cb; /* Matches the theme */
-}
-
-.skill-category {
-    margin-bottom: 20px;
-}
-
-.skill-category h3 {
-    color: #6a11cb; /* Deep purple heading color */
-    font-size: 1.5em;
-    display: flex;
-    align-items: center;
-}
-
-.skill-category h3::before {
-    content: "⦿"; /* Small circle icon before each skill category */
-    margin-right: 10px;
-    color: #2575fc; /* Bright blue icon */
-    font-size: 1.2em;
-}
-
-.skill-category ul {
-    list-style-type: none; /* Remove default bullets */
-    padding: 0;
-}
-
-.skill-category li {
-    position: relative;
-    padding-left: 20px;
+#research li {
     margin-bottom: 10px;
     line-height: 1.6;
-    font-size: 1em;
 }
 
-.skill-category li::before {
-    content: "▹"; /* Triangle bullet point */
-    position: absolute;
-    left: 0;
-    color: #6a11cb; /* Matches the theme */
-    font-size: 1.2em;
+/* Publications Section Styling */
+#publications {
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+#publications ul {
+    list-style-type: disc; /* Bullet points */
+    margin-left: 20px;
+}
+
+#publications li {
+    margin-bottom: 10px;
+    line-height: 1.6;
 }
 
 /* Conferences and Talks Section */
@@ -130,6 +105,10 @@ h2 {
     border: 1px solid #ddd; /* Light border */
     padding: 30px;
     position: relative;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
 }
 
 #talks::before {
@@ -184,6 +163,10 @@ h2 {
     border: 1px solid #ddd; /* Light border */
     padding: 30px;
     position: relative;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
 }
 
 #awards::before {
@@ -226,6 +209,66 @@ h2 {
     word-wrap: break-word; /* Prevents long lines from overflowing */
 }
 
+/* Skills Section Styling */
+#skills {
+    background: linear-gradient(135deg, #f3ecf6, #eef5ff); /* Subtle gradient background */
+    border: 1px solid #ddd; /* Light border */
+    padding: 30px;
+    position: relative;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+#skills::before {
+    content: "🛠️"; /* Icon before the section */
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    font-size: 2em;
+    color: #6a11cb; /* Matches the theme */
+}
+
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-category h3 {
+    color: #6a11cb; /* Deep purple heading color */
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+}
+
+.skill-category h3::before {
+    content: "⦿"; /* Small circle icon before each skill category */
+    margin-right: 10px;
+    color: #2575fc; /* Bright blue icon */
+    font-size: 1.2em;
+}
+
+.skill-category ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+}
+
+.skill-category li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+.skill-category li::before {
+    content: "▹"; /* Triangle bullet point */
+    position: absolute;
+    left: 0;
+    color: #6a11cb; /* Matches the theme */
+    font-size: 1.2em;
+}
+
 /* Footer Styling */
 footer {
     text-align: center;
@@ -236,7 +279,6 @@ footer {
     border-top: 5px solid #fff; /* White border for contrast */
 }
 
-/* Custom Styling for the "Contact" Heading */
 .contact-header {
     color: #ffeb3b; /* Bright yellow for the heading */
     font-size: 1.8em;

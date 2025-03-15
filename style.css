@@ -300,3 +300,16 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* Make links stand out */
+a {
+    color: #2575fc; /* Bright blue for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff9800; /* Orange on hover */
+    text-decoration: underline;
+}
