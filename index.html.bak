@@ -6,9 +6,6 @@
     <title>Prasad Shelke</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<div class="profile-photo">
-    <img src="images/prasad_picture.jpg" alt="Prasad Shelke" width="200" height="200">
-</div>
 <body>
     <header>
         <h1>Prasad Shelke</h1>
