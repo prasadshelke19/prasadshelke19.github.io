@@ -124,6 +124,106 @@ h2 {
     font-size: 1.2em;
 }
 
+/* Conferences and Talks Section */
+#talks {
+    background: linear-gradient(135deg, #f3ecf6, #eef5ff); /* Subtle gradient background */
+    border: 1px solid #ddd; /* Light border */
+    padding: 30px;
+    position: relative;
+}
+
+#talks::before {
+    content: "🎤"; /* Icon before the section */
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    font-size: 2em;
+    color: #6a11cb; /* Matches the theme */
+}
+
+.talks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Spacing between items */
+}
+
+.talk-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+}
+
+.talk-item:hover {
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+.talk-item h3 {
+    margin: 0 0 10px 0; /* Remove default margin */
+    font-size: 1.4em;
+    color: #6a11cb; /* Deep purple heading */
+}
+
+.talk-item p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
+.presentation-type {
+    font-size: 0.9em;
+    color: #2575fc; /* Bright blue for presentation type */
+    font-weight: bold;
+}
+
+/* Honours and Awards Section */
+#awards {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2); /* Faint orange-yellow gradient */
+    border: 1px solid #ddd; /* Light border */
+    padding: 30px;
+    position: relative;
+}
+
+#awards::before {
+    content: "🏆"; /* Icon before the section */
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    font-size: 2em;
+    color: #ff9800; /* Warm orange to match the theme */
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Spacing between items */
+}
+
+.award-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+}
+
+.award-item:hover {
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+}
+
+.award-item h3 {
+    margin: 0 0 10px 0; /* Remove default margin */
+    font-size: 1.4em;
+    color: #ff9800; /* Warm orange for headings */
+}
+
+.award-item p {
+    margin: 5px 0;
+    line-height: 1.6;
+}
+
 /* Footer Styling */
 footer {
     text-align: center;

@@ -183,47 +183,56 @@
 
     <!-- Honours and Awards Section -->
     <section id="awards">
-        <h2>Honours and Awards</h2>
-        <ul>
-            <!-- 2024 -->
-            <li>
-                <strong>Endowment Development Grant</strong> <em>(April 2024)</em><br>
-                Antarctic Research Centre, New Zealand
-            </li>
-            <li>
-                <strong>International Travel Grant</strong> <em>(August 2024)</em><br>
-                Meteorological Society of New Zealand
-            </li>
+    <h2>Honours and Awards</h2>
+    <div class="awards-grid">
+        <!-- 2024 -->
+        <div class="award-item">
+            <h3>Endowment Development Grant</h3>
+            <p><em>(April 2024)</em></p>
+            <p>Antarctic Research Centre, New Zealand</p>
+        </div>
 
-            <!-- 2023 -->
-            <li>
-                <strong>Young Researcher Travel Grant 2023 (Winner)</strong> <em>(September 2023)</em><br>
-                Geosciences Society of New Zealand
-            </li>
-            <li>
-                <strong>International Conference Grant</strong> <em>(October 2023)</em><br>
-                Meteorological Society of New Zealand
-            </li>
+        <div class="award-item">
+            <h3>International Travel Grant</h3>
+            <p><em>(August 2024)</em></p>
+            <p>Meteorological Society of New Zealand</p>
+        </div>
 
-            <!-- 2022 -->
-            <li>
-                <strong>Wellington Doctoral Scholarship</strong> <em>(December 2022)</em><br>
-                Victoria University of Wellington, New Zealand
-            </li>
+        <!-- 2023 -->
+        <div class="award-item">
+            <h3>Young Researcher Travel Grant 2023 (Winner)</h3>
+            <p><em>(September 2023)</em></p>
+            <p>Geosciences Society of New Zealand</p>
+        </div>
 
-            <!-- 2021 -->
-            <li>
-                <strong>Marie Skłodowska Curie Fellowship</strong> <em>(January 2021)</em><br>
-                European Commission <em>(Early Stage Researcher)</em>
-            </li>
+        <div class="award-item">
+            <h3>International Conference Grant</h3>
+            <p><em>(October 2023)</em></p>
+            <p>Meteorological Society of New Zealand</p>
+        </div>
 
-            <!-- 2019 -->
-            <li>
-                <strong>Research Fellowship</strong> <em>(July 2019)</em><br>
-                Department of Science and Technology (Ministry of Earth Sciences), India
-            </li>
-        </ul>
-    </section>
+        <!-- 2022 -->
+        <div class="award-item">
+            <h3>Wellington Doctoral Scholarship</h3>
+            <p><em>(December 2022)</em></p>
+            <p>Victoria University of Wellington, New Zealand</p>
+        </div>
+
+        <!-- 2021 -->
+        <div class="award-item">
+            <h3>Marie Skłodowska Curie Fellowship</h3>
+            <p><em>(January 2021)</em></p>
+            <p>European Commission <em>(Early Stage Researcher)</em></p>
+        </div>
+
+        <!-- 2019 -->
+        <div class="award-item">
+            <h3>Research Fellowship</h3>
+            <p><em>(July 2019)</em></p>
+            <p>Department of Science and Technology (Ministry of Earth Sciences), India</p>
+        </div>
+    </div>
+</section>
 
     <!-- Footer Section -->
     <footer>
