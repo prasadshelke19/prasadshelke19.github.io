@@ -1,91 +1,156 @@
+/* General Body Styling */
 body {
     font-family: 'Open Sans', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9f7f2;
+    background-color: #f9f7f2; /* Faint cream background */
     color: #333;
 }
 
+/* Header Styling */
 header {
-    background: #007BFF;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient blue-purple */
     color: white;
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 20px; /* Increased padding for a bolder look */
+    border-bottom: 5px solid #fff; /* White border for contrast */
 }
 
+header h1 {
+    margin: 0;
+    font-size: 2.8em; /* Slightly larger font size */
+    letter-spacing: 2px; /* Adds spacing between letters */
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+/* Profile Photo Styling */
 .profile-photo {
     text-align: center;
     margin-bottom: 20px;
 }
 
 .profile-photo img {
-    border-radius: 50%; /* Makes the photo circular */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    border-radius: 50%; /* Circular photo */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    border: 3px solid #fff; /* White border around the photo */
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* Ensures the image fits perfectly */
 }
 
-#skills {
-    margin: 20px auto;
+/* Section Styling */
+section {
+    margin: 40px auto; /* Increased spacing between sections */
     max-width: 800px;
-    padding: 20px;
+    padding: 30px;
     background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
-.skill-category h3 {
-    color: #007BFF; /* Blue color for headings */
-    border-bottom: 2px solid #007BFF; /* Underline for headings */
-    padding-bottom: 5px;
-    margin-top: 20px;
-}
-
-.skill-category ul {
-    list-style-type: disc; /* Bullet points */
-    margin-left: 20px;
-}
-
-.skill-category li {
-    line-height: 1.6; /* Spacing between items */
-}
-
-h1 {
-    margin: 0;
-    font-size: 2.5em;
+section:hover {
+    transform: translateY(-5px); /* Slight upward movement on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
 h2 {
-    color: #007BFF;
-    border-bottom: 2px solid #007BFF;
-    padding-bottom: 5px;
+    color: #6a11cb; /* Deep purple heading color */
+    border-bottom: 2px solid #6a11cb; /* Matching border */
+    padding-bottom: 10px;
+    font-size: 1.8em;
+    margin-bottom: 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-weight: 700; /* Bold weight for headings */
-    color: #007BFF; /* Blue color for headings */
+/* Skills Section Styling */
+#skills {
+    background: linear-gradient(135deg, #f3ecf6, #eef5ff); /* Subtle gradient background */
+    border: 1px solid #ddd; /* Light border */
+    padding: 30px;
+    position: relative;
 }
 
-section {
-    margin: 20px auto;
-    max-width: 800px;
-    padding: 20px;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+#skills::before {
+    content: "🛠️"; /* Icon before the section */
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    font-size: 2em;
+    color: #6a11cb; /* Matches the theme */
 }
 
+.skill-category {
+    margin-bottom: 20px;
+}
+
+.skill-category h3 {
+    color: #6a11cb; /* Deep purple heading color */
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+}
+
+.skill-category h3::before {
+    content: "⦿"; /* Small circle icon before each skill category */
+    margin-right: 10px;
+    color: #2575fc; /* Bright blue icon */
+    font-size: 1.2em;
+}
+
+.skill-category ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+}
+
+.skill-category li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+.skill-category li::before {
+    content: "▹"; /* Triangle bullet point */
+    position: absolute;
+    left: 0;
+    color: #6a11cb; /* Matches the theme */
+    font-size: 1.2em;
+}
+
+/* Footer Styling */
 footer {
     text-align: center;
-    margin-top: 20px;
-    padding: 10px 0;
-    background: #007BFF;
+    margin-top: 40px;
+    padding: 20px 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient blue-purple */
     color: white;
+    border-top: 5px solid #fff; /* White border for contrast */
 }
 
-a {
-    color: #007BFF;
+footer a {
+    color: white;
     text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Link Styling */
+a {
+    color: #6a11cb; /* Deep purple link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #2575fc; /* Bright blue on hover */
 }
