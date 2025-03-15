@@ -303,7 +303,7 @@ footer a:hover {
 
 /* Make links stand out */
 a {
-    color: #2575fc; /* Bright blue for links */
+    color: #6a11cb; /* purple for links */
     text-decoration: none; /* Remove underline */
     font-weight: bold;
     transition: color 0.3s ease;
