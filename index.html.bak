@@ -86,17 +86,21 @@
             </div>
 
             <div class="talk-item">
-                <h3>European Geosciences Union - General Assembly 2024</h3>
+                <h3>
+					<a href="https://usclivar.org/meetings/blocking-extreme-weather" target="_blank">
+					European Geosciences Union - General Assembly 2024
+					</a>
+				</h3>
                 <p><em>(April 2024, Vienna, Austria)</em></p>
-                <p>"<strong>Are we missing future extreme events by ignoring less persistent blocking?</strong>" <span class="presentation-type">
-				(Oral Presentation)</span></p>
+                <p>"<strong>Are we missing future extreme events by ignoring less persistent blocking?</strong>" 
+				<span class="presentation-type">(Oral Presentation)</span></p>
             </div>
 
             <div class="talk-item">
                 <h3>
 					<a href="https://usclivar.org/meetings/blocking-extreme-weather" target="_blank">
 					Blocking and Extreme Weather in Changing Climate Workshop - US CLIVAR
-				
+					</a>
 				</h3>
                 <p><em>(March 2024, Colorado, USA)</em></p>
                 <p>"<strong>Northern Hemispheric Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2</strong>" <span class="presentation-type">(Poster Presentation)</span></p>
