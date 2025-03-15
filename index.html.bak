@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prasad Shelke</title>
     <link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">	
 </head>
+<div class="profile-photo">
+    <img src="images/prasad_picture.jpg" alt="Prasad Shelke" width="200" height="200">
+</div>
 <body>
     <header>
         <h1>Prasad Shelke</h1>
@@ -14,13 +18,13 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>I am a dedicated researcher and PhD candidate in Geophysics at Victoria University of Wellington, New Zealand. My research focuses on understanding Hemispheric Asymmetry in Simulating Atmospheric Blocking and Heat Extremes Under a Warming Planet.</p>
+        <p>I am a PhD candidate in Geophysics at Victoria University of Wellington, New Zealand. My research focuses on understanding Hemispheric Asymmetry in Simulating Atmospheric Blocking and Heat Extremes Under a Warming Planet.</p>
     </section>
 
     <section id="research">
         <h2>Research</h2>
         <ul>
-            <li><strong>PhD Research:</strong> Hemispheric Asymmetry in simulating Atmospheric Blocking and Heat Extremes Under Warming Planet.</li>
+            <li><strong>PhD:</strong> Hemispheric Asymmetry in simulating Atmospheric Blocking and Heat Extremes Under Warming Planet.</li>
             <li><strong>Previous Work:</strong> Numerical modeling of mercury pollutant exchange in the Mediterranean Sea, Monsoon Dynamics, and Oceanic Teleconnections.</li>
         </ul>
     </section>
@@ -32,22 +36,109 @@
         </ul>
     </section>
 
-    <section id="talks">
-        <h2>Conferences and Talks</h2>
-        <ul>
-            <li><strong>EGU General Assembly 2025:</strong> Does ‘Blocking’ Shape the Future of Antarctic Heat Extremes? (Oral).</li>
-            <li><strong>University of British Columbia:</strong> Present and Future Implications of Atmospheric Blocking in a Warming World (Invited Talk).</li>
-        </ul>
-    </section>
+<section id="talks">
+    <h2>Conferences and Talks</h2>
+    <ul>
+        <!-- 2025 -->
+        <li>
+            <strong>European Geosciences Union - General Assembly 2025</strong> <em>(April 2025, Vienna, Austria)</em><br>
+            <em>"Does ‘Blocking’ Shape the Future of Antarctic Heat Extremes?"</em> <strong>(Oral Presentation)</strong>
+        </li>
 
-    <section id="awards">
-        <h2>Awards and Honors</h2>
-        <ul>
-            <li>Marie Skłodowska Curie Fellowship (2021).</li>
-            <li>Wellington Doctoral Scholarship (2022).</li>
-            <li>Young Researcher Travel Grant 2023 (Winner).</li>
-        </ul>
-    </section>
+        <!-- 2024 -->
+		<li>
+            <strong>Meteorological Society of New Zealand Annual Conference 2024</strong> <em>(November 2024, Auckland, New Zealand)</em><br>
+            <em>"Is the Community Earth System Model up to the challenge of Southern Hemispheric blocking?"</em> <strong>(Oral Presentation)</strong>
+        </li>
+        <li>
+            <strong>University of British Columbia</strong> <em>(October 2024, Virtual)</em><br>
+            <em>"Present and Future Implications of Atmospheric Blocking in a Warming World"</em> <strong>(Invited Talk)</strong>
+        </li>
+        <li>
+            <strong>University of Colorado, Boulder</strong> <em>(August 2024, Colorado, USA)</em><br>
+            <em>"Global Atmospheric Blocking: Present and Future Implications"</em> <strong>(Invited Talk)</strong>
+        </li>
+        <li>
+            <strong>New Zealand Antarctic Society Mid-Winter Meeting 2024</strong> <em>(June 2024, Wellington, New Zealand)</em><br>
+            <em>"Global Atmospheric Blocking: Present and Future Implications"</em> <strong>(Invited Talk)</strong>
+        </li>
+        <li>
+            <strong>European Geosciences Union - General Assembly 2024</strong> <em>(April 2024, Vienna, Austria)</em><br>
+            <em>"Are we missing future extreme events by ignoring less persistent blocking?"</em> <strong>(Oral Presentation)</strong>
+        </li>
+        <li>
+            <strong>Blocking and Extreme Weather in Changing Climate Workshop - US CLIVAR</strong> <em>(March 2024, Colorado, USA)</em><br>
+            <em>"Northern Hemispheric Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2"</em> <strong>(Poster Presentation)</strong>
+        </li>
+
+        <!-- 2023 -->
+        <li>
+            <strong>American Geophysical Union - Fall Meeting 2023</strong> <em>(December 2023, San Francisco, USA)</em><br>
+            <em>"Northern Hemispheric Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2"</em> <strong>(Poster Presentation)</strong>
+        </li>
+        <li>
+            <strong>Meteorological Society of New Zealand Annual Conference 2023</strong> <em>(November 2023, Wellington, New Zealand)</em><br>
+            <em>"Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2"</em> <strong>(Oral Presentation)</strong>
+        </li>
+
+        <!-- 2022 -->
+        <li>
+            <strong>European Research Course on Atmosphere Winter School</strong> <em>(January 2022, Grenoble, France - Virtual)</em><br>
+            <em>"Regional 3D Atmosphere and Ocean Models to quantify the Impact of Oceanic Sources on the Regional Mercury Budget"</em> <strong>(Poster Presentation)</strong>
+        </li>
+
+        <!-- 2019 -->
+        <li>
+            <strong>National Space Science Symposium, India</strong> <em>(January 2019, Pune, India)</em><br>
+            <em>"Impact of Satellite Altimeter Derived Ocean Mean Temperature of Nino 3.4 Region on Indian Summer Monsoon Rainfall"</em> <strong>(Poster Presentation)</strong>
+        </li>
+    </ul>
+</section>
+
+<section id="awards">
+    <h2>Honours and Awards</h2>
+    <ul>
+        <!-- 2024 -->
+        <li>
+            <strong>Endowment Development Grant</strong> <em>(April 2024)</em><br>
+            Antarctic Research Centre, New Zealand
+        </li>
+
+        <!-- 2024 -->
+        <li>
+            <strong>International Travel Grant</strong> <em>(August 2024)</em><br>
+            Meteorological Society of New Zealand
+        </li>
+
+        <!-- 2023 -->
+        <li>
+            <strong>Young Researcher Travel Grant 2023 (Winner)</strong> <em>(September 2023)</em><br>
+            Geosciences Society of New Zealand
+        </li>
+        <li>
+            <strong>International Conference Grant</strong> <em>(October 2023)</em><br>
+            Meteorological Society of New Zealand
+        </li>
+
+        <!-- 2022 -->
+        <li>
+            <strong>Wellington Doctoral Scholarship</strong> <em>(December 2022)</em><br>
+            Victoria University of Wellington, New Zealand
+        </li>
+
+        <!-- 2021 -->
+        <li>
+            <strong>Marie Skłodowska Curie Fellowship</strong> <em>(January 2021)</em><br>
+            European Commission <em>(Early Stage Researcher)</em>
+        </li>
+
+        <!-- 2019 -->
+        <li>
+            <strong>Research Fellowship</strong> <em>(July 2019)</em><br>
+            Department of Science and Technology (Ministry of Earth Sciences), India
+        </li>
+    </ul>
+</section>
 
     <footer>
         <h2>Contact</h2>
