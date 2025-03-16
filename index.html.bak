@@ -9,12 +9,12 @@
 </head>
 <body>
 <!-- Navigation Bar -->
-<nav class="navbar">
+<!--<nav class="navbar">
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="resume.html">Works</a></li>
     </ul>
-</nav>
+</nav> -->
     <!-- Header -->
     <header>
 	    <!-- Last Updated Date -->
@@ -57,7 +57,7 @@
         <div class="about-photo">
             <img src="prasad_picture.JPG" alt="Prasad Shelke" width="200" height="200" style="border-radius: 50%; border: 3px solid #fff; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);">
 			<p class="photo-caption">
-				<a href="#nz-antarctic-society-talk" class="highlight-link">Public talk: June 2024, New Zealand</a>
+				<a href="#nz-antarctic-society-talk" class="highlight-link">Delivering a public talk on<br>Global Atmospheric Blocking at the<br>New Zealand Antarctic Society Mid-Winter Meeting, June 2024, Wellington, New Zealand.</a>
 			</p>
         </div>
     </div>
