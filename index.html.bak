@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="google-site-verification" content="BKx_FJjwsIp1mJpaJwsklSSM-FF1_ClkmE5fRydq-4k"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prasad Shelke - Climate Scientist</title>
@@ -56,7 +57,7 @@
         </div>
         <div class="about-photo">
             <img src="prasad_picture.JPG" alt="Prasad Shelke" width="200" height="200" style="border-radius: 50%; border: 3px solid #fff; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);">
-			<p class="photo-caption">
+			<p class="photo-caption" class="justified-text">
 				<a href="#nz-antarctic-society-talk" class="highlight-link">Delivering a public talk on<br>Global Atmospheric Blocking<br> At NZAS Mid-Winter Meeting,<br>June 2024, New Zealand.</a>
 			</p>
         </div>
@@ -86,12 +87,14 @@
             <!-- 2025 -->
             <div class="talk-item">
                 <h3>
-					<a href="https://meetingorganizer.copernicus.org/EGU25/EGU25-14224.html" target="_blank">
+					<a href="https://www.egu25.eu/" target="_blank">
 					European Geosciences Union<br>General Assembly 2025
 					</a>
 				</h3>
                 <p><em>(April 2025, Vienna, Austria)</em></p>
+				<a href="https://meetingorganizer.copernicus.org/EGU25/EGU25-14224.html" target="_blank">
                 <p>"<strong>Does ‘Blocking’ Shape the Future of Antarctic Heat Extremes?</strong>" 
+				</a>
 				<br><span class="presentation-type">(Oral Presentation)</span></p>
             </div>
 
@@ -126,12 +129,13 @@
 
             <div class="talk-item">
                 <h3>
-					<a href="https://meetingorganizer.copernicus.org/EGU24/EGU24-10982.html" target="_blank">
+					<a href="https://www.egu24.eu/" target="_blank">
 					European Geosciences Union<br>General Assembly 2024
 					</a>
 				</h3>
                 <p><em>(April 2024, Vienna, Austria)</em></p>
-                <p>"<strong>Are we missing future extreme events by ignoring less persistent blocking?</strong>" 
+					<a href="https://meetingorganizer.copernicus.org/EGU24/EGU24-10982.html" target="_blank"> 				
+                <p>"<strong>Are we missing future extreme events by ignoring less persistent blocking?</strong>" </a>
 				<br><span class="presentation-type">(Oral Presentation)</span></p>
             </div>
 
@@ -236,7 +240,7 @@
         <div class="skill-category">
             <h3>Numerical Modeling</h3>
             <ul>
-                <li><strong>Community Earth System Model (CESM)</strong></li>
+                <li><a href="https://www.cesm.ucar.edu/" target="_blank"><strong>Community Earth System Model (CESM)</strong></a></li>
                 <li><strong>Weather Research and Forecasting Model (WRF-ARW, WRF-CHEM, Polar-WRF)</strong></li>
                 <li><strong>Box Models (Sea-Spray Aerosol, Tracer-Transfer Models)</strong></li>
             </ul>
@@ -272,7 +276,7 @@
                 <li><strong>Artificial Neural Networks (ANN)</strong></li>
                 <li><strong>Convolutional Neural Networks (CNN)</strong></li>
                 <li><strong>Generalized Linear Models (GLMs)</strong></li>
-                <li><strong>Use of AI for Climate Science (Developing: Forecasting and Projections)</strong></li>
+                <li><strong>Use of AI for Climate Science (Currently Developing: Forecasting System and Projections Pathways)</strong></li>
                 <li><strong>Data Clustering</strong></li>
             </ul>
         </div>
