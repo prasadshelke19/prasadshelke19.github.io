@@ -8,13 +8,13 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- Resume Page 
+    <!-- index Page -->
     <url>
-        <loc>https://prasadshelke19.github.io/resume.html</loc>
-        <lastmod>2024-01-01</lastmod>
+        <loc>https://prasadshelke19.github.io/index.html</loc>
+        <lastmod>2025-03-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-    </url> -->
+    </url> 
 
     <!-- Publications Page (if applicable) 
     <url>
