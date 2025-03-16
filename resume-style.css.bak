@@ -1,0 +1,291 @@
+/* CSS Reset */
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+/* General Body Styling */
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f7f2; /* Light cream background */
+  color: #333; /* Dark gray text */
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+/* Header Styling */
+header {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient blue-purple */
+  color: white;
+  text-align: center;
+  padding: 40px 20px; /* Increased padding for a bolder look */
+  border-bottom: 5px solid #fff; /* White border for contrast */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.8em; /* Slightly larger font size */
+  letter-spacing: 2px; /* Adds spacing between letters */
+}
+
+header p {
+  font-size: 1.2em;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+/* Social Links in Header */
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ff9800; /* Orange on hover */
+}
+/* Section Styling */
+.resume-section {
+  margin: 40px auto;
+  max-width: 800px;
+  padding: 30px;
+  background: white;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+.resume-section h2 {
+  margin-top: 0;
+  font-size: 2em;
+  color: #6a11cb; /* Deep purple heading */
+  border-bottom: 2px solid #ddd; /* Subtle underline */
+  padding-bottom: 10px;
+}
+
+/* About Section */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.about-photo img {
+  border-radius: 50%; /* Circular photo */
+  border: 3px solid #fff;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.photo-caption {
+  font-size: 14px;
+  font-style: italic;
+  color: #555;
+  text-align: center;
+  margin-top: 10px;
+}
+/* Experience and Education Items */
+.experience-item,
+.education-item {
+  margin-bottom: 20px;
+}
+
+.experience-item h3,
+.education-item h3 {
+  margin: 0;
+  font-size: 1.4em;
+  color: #2575fc; /* Bright blue */
+}
+
+.experience-item p,
+.education-item p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #555;
+}
+/* Skills List */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills-list li {
+  background: #e0f7fa; /* Light blue background */
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  color: #333;
+  font-weight: bold;
+}
+/* Footer Styling */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2575fc; /* Gradient blue-purple */
+  color: white;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer .social-links {
+  margin-top: 10px;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ff9800; /* Orange on hover */
+}
