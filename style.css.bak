@@ -55,13 +55,6 @@ html {
 }
 
 /* Highlight Target Section */
-#nz-antarctic-society-talk {
-    padding: 20px;
-    border-left: 5px solid #2575fc;
-    background-color: #f9f9f9;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 #nz-antarctic-society-talk:hover {
     background-color: #e9ecef;
 }

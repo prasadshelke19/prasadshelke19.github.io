@@ -53,7 +53,39 @@ html {
 .highlight-link:visited {
     color: #2575fc;
 }
+/* Navigation Bar Styling */
+.navbar {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    padding: 10px 20px;
+    text-align: center; /* Centers the links */
+    border-bottom: 2px solid #fff; /* Adds a white border at the bottom */
+}
 
+.nav-links {
+    list-style: none; /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Aligns links horizontally */
+    justify-content: center; /* Centers the links */
+    gap: 20px; /* Adds spacing between links */
+}
+
+.nav-links li {
+    display: inline; /* Ensures links are inline */
+}
+
+.nav-links a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Removes underline */
+    font-size: 18px; /* Larger font size */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.nav-links a:hover {
+    color: #ff9800; /* Changes color on hover */
+    text-decoration: underline; /* Underlines the link */
+}
 /* Highlight Target Section */
 #nz-antarctic-society-talk:hover {
     background-color: #e9ecef;
