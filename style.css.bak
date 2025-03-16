@@ -28,43 +28,104 @@ header p {
     margin-top: 10px;
     font-weight: 400;
 }
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
 
+/* Highlight Link Styles */
+.highlight-link {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.highlight-link:hover {
+    color: #ff9800;
+    text-decoration: underline;
+}
+
+.highlight-link:active {
+    color: #e91e63;
+}
+
+.highlight-link:visited {
+    color: #2575fc;
+}
+
+/* Highlight Target Section */
+#nz-antarctic-society-talk {
+    padding: 20px;
+    border-left: 5px solid #2575fc;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#nz-antarctic-society-talk:hover {
+    background-color: #e9ecef;
+}
+
+#nz-antarctic-society-talk:focus-within,
+#nz-antarctic-society-talk:target {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
 /* About Section Styling */
 #about {
     margin: 40px auto;
     max-width: 800px;
     padding: 30px;
-    background: white;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    background: linear-gradient(135deg, #fff3e0, #ede7f6);
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .about-container {
     display: flex;
-    align-items: center;
-    gap: 30px; /* Space between text and photo */
-    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .about-text {
-    flex: 1; /* Takes up available space */
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-photo {
+    flex: 0 0 200px;
+    text-align: center;
 }
 
 .about-photo img {
-    border-radius: 50%; /* Circular photo */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
-    border: 3px solid #fff; /* White border around the photo */
+    border-radius: 50%;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    border: 3px solid #fff;
     width: 200px;
     height: 200px;
-    object-fit: cover; /* Ensures the image fits perfectly */
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.about-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.photo-caption {
+    font-size: 14px;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    margin-top: 10px;
+}
 /* Research Section Styling */
 #research {
     margin: 40px auto;
     max-width: 800px;
     padding: 30px;
-    background: white;
+    background: linear-gradient(135deg, #ffffff, #ede7f6);
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
 }
@@ -84,7 +145,7 @@ header p {
     margin: 40px auto;
     max-width: 800px;
     padding: 30px;
-    background: white;
+    background: linear-gradient(135deg, #ffffff, #ede7f6);
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
 }
@@ -131,35 +192,45 @@ header p {
     padding: 20px;
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent;
+}
+.talk-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: #f9f9f9;
+    border-color: #2575fc;
 }
 
-.talk-item:hover {
-    transform: translateY(-5px); /* Slight upward movement */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+.talk-item:hover h3 {
+    color: #2575fc;
+}
+
+.talk-item:hover .presentation-type {
+    color: #ff9800;
 }
 
 .talk-item h3 {
-    margin: 0 0 10px 0; /* Remove default margin */
+    margin: 0 0 10px 0;
     font-size: 1.4em;
-    color: #6a11cb; /* Deep purple heading */
+    color: #6a11cb;
 }
 
 .talk-item p {
     margin: 5px 0;
     line-height: 1.6;
-    word-wrap: break-word; /* Prevents long lines from overflowing */
+    word-wrap: break-word;
 }
 
 .presentation-type {
     font-size: 0.9em;
-    color: #2575fc; /* Bright blue for presentation type */
+    color: #2575fc;
     font-weight: bold;
 }
 
 /* Honours and Awards Section */
 #awards {
-    background: linear-gradient(135deg, #fff3e0, #ffe0b2); /* Faint orange-yellow gradient */
+    background: linear-gradient(135deg, #ffe5b4, #E6E6FA); /* Faint orange-yellow gradient */
     border: 1px solid #ddd; /* Light border */
     padding: 30px;
     position: relative;
@@ -200,7 +271,7 @@ header p {
 .award-item h3 {
     margin: 0 0 10px 0; /* Remove default margin */
     font-size: 1.4em;
-    color: #ff9800; /* Warm orange for headings */
+    color: black; /* Warm orange for headings */
 }
 
 .award-item p {
@@ -303,7 +374,7 @@ footer a:hover {
 
 /* Make links stand out */
 a {
-    color: #2575fc; /* Bright blue for links */
+    color: #6a11cb; /* purple for links */
     text-decoration: none; /* Remove underline */
     font-weight: bold;
     transition: color 0.3s ease;
@@ -312,4 +383,52 @@ a {
 a:hover {
     color: #ff9800; /* Orange on hover */
     text-decoration: underline;
+}
+/* Style for Quick Links */
+.quick-links {
+    text-align: center; /* Centers the links horizontally */
+    margin-top: 20px; /* Adds spacing between the header text and links */
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.quick-links a {
+    color: #2575fc; /* Bright blue for links */
+    text-decoration: none; /* Removes underline */
+    font-weight: bold;
+    margin: 0 10px; /* Adds spacing between links */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.quick-links a:hover {
+    color: #ff9800; /* Changes color on hover */
+    text-decoration: underline;
+}
+
+/* Style for Header Content */
+.header-content {
+    text-align: center; /* Centers the main header content */
+}
+
+/* Style for Last Updated Date */
+.last-updated {
+    position: absolute; /* Positions the element relative to the nearest positioned ancestor */
+    top: 10px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    font-size: 14px; /* Smaller font size */
+    color: yellow; /* Subtle yellow color */
+    font-style: italic; /* Italicizes the text */
+}
+/* Justify Text in Specific Sections */
+.justified-text {
+    text-align: justify; /* Aligns text to both left and right margins */
+    line-height: 1.6; /* Ensures proper spacing between lines */
+    margin: 20px 0; /* Adds spacing above and below the text */
+}
+/* Style for Photo Caption */
+.photo-caption {
+    font-size: 14px; /* Smaller font size */
+    font-style: italic; /* Italicize the text */
+    color: #555; /* Subtle gray color */
+    text-align: center; /* Center-align the text */
+    margin-top: 10px; /* Adds spacing between the photo and caption */
 }
