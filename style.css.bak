@@ -10,7 +10,7 @@ body {
 
 /* Header Styling */
 header {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient blue-purple */
+    background: linear-gradient(130deg, #ede7f6, #fff3e0, #fff3e0, #ede7f6); /* Gradient blue-purple #6a11cb, #2575fc*/
     color: white;
     text-align: center;
 /*    padding: 40px 20px; /* Increased padding for a bolder look */ 
@@ -22,15 +22,15 @@ header {
 header h1 {
     margin: 0;
 /*    font-family: 'Rock+Salt', cursive;*/
-    font-family: 'Bebas+Neue', sans-serif;
-    font-size: 3.3em;
+    font-family: 'Open+Sans', sans-serif;
+    font-size: 3.0em;
     letter-spacing: 2px;
-    color: white;
+    color: rebeccapurple;
     text-shadow: 
         -2px -2px 0 black,  /* Top-left shadow */
-        1px -1px 0 black,   /* Top-right shadow */
+        1px -1px 0 pink,   /* Top-right shadow */
         -1px 1px 0 black,   /* Bottom-left shadow */
-        2px 2px 0 black;    /* Bottom-right shadow */	
+/*        2px 2px 0 white;    /* Bottom-right shadow */	
 }
 
 /* Alarming Text Styling */
@@ -54,24 +54,24 @@ header h1 {
 @keyframes alarm-glow {
     0% { 
         text-shadow: 
-            0 0 5px black,   /* Bright red glow (RGB: 255, 0, 0) */
+            0 0 5px orange,   /* Bright red glow (RGB: 255, 0, 0) */
             0 0 10px #FFE5B4,  /* Orange-red glow (RGB: 255, 69, 0) */
             0 0 20px #FFE5B4,  /* Tomato glow (RGB: 255, 99, 71) */
             0 0 40px #FFE5B4;  /* Yellow-orange glow (RGB: 255, 165, 0) */
     }
     50% { 
         text-shadow: 
-            0 0 10px blue,  /* Bright red glow (RGB: 255, 0, 0) */
+            0 0 10px yellow,  /* Bright red glow (RGB: 255, 0, 0) */
             0 0 20px #FFE5B4,  /* Orange-red glow (RGB: 255, 69, 0) */
             0 0 30px #FFE5B4,  /* Tomato glow (RGB: 255, 99, 71) */
-            0 0 50px #FFE5B4;  /* Yellow-orange glow (RGB: 255, 165, 0) */
+            0 0 50px orange;  /* Yellow-orange glow (RGB: 255, 165, 0) */
     }
     100% { 
         text-shadow: 
-            0 0 5px green,   /* Bright red glow (RGB: 255, 0, 0) */
+            0 0 5px white,   /* Bright red glow (RGB: 255, 0, 0) */
             0 0 10px #FFE5B4,  /* Orange-red glow (RGB: 255, 69, 0) */
             0 0 20px #FFE5B4,  /* Tomato glow (RGB: 255, 99, 71) */
-            0 0 40px #FFE5B4;  /* Yellow-orange glow (RGB: 255, 165, 0) */
+            0 0 40px orange;  /* Yellow-orange glow (RGB: 255, 165, 0) */
     }
 }
 /* Style for the first paragraph (p1) */
@@ -79,7 +79,7 @@ header .p1 {
     font-size: 1.3em;
     margin: 25px 0; /* Adds spacing above and below */
     font-weight: 400;
-    color: white; /* Ensure it matches the header's text color */
+    color: black; /* Ensure it matches the header's text color */
 }
 
 /* Style for the second paragraph (p2) */
@@ -87,7 +87,7 @@ header .p2 {
     font-size: 1.0em;
     margin: 7px 0; /* Adds spacing above and below */
     font-weight: 400;
-    color: white; /* Ensure it matches the header's text color */
+    color: black; /* Ensure it matches the header's text color */
 }
 /* Smooth Scrolling */
 html {
@@ -404,7 +404,7 @@ html {
 
 .skill-category h3 {
     color: teal; /* Deep purple heading color #6a11cb */
-    font-size: 1.6em;
+    font-size: 1.5em;
     display: flex;
     align-items: center;
 }
@@ -442,25 +442,25 @@ footer {
     text-align: center;
     margin-top: 40px;
     padding: 20px 0;
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient blue-purple */
-    color: white;
+    background: linear-gradient(135deg, #ede7f6, #fff3e0, #ede7f6); /* Gradient blue-purple */
+    color: black;
     border-top: 5px solid #fff; /* White border for contrast */
 }
 
 .contact-header {
-    color: #ffeb3b; /* Bright yellow for the heading */
+    color: black; /* Bright yellow for the heading ffeb3b*/
     font-size: 1.8em;
-    border-bottom: 2px solid #ffeb3b; /* Yellow underline */
+    border-bottom: 2px solid maroon; /* Yellow underline */
     padding-bottom: 10px;
     margin-bottom: 20px; /* Space below the heading */
 }
 
 footer strong {
-    color: white; /* Ensure icons and labels are visible */
+    color: black; /* Ensure icons and labels are visible */
 }
 
 footer a {
-    color: white;
+    color: maroon;
     text-decoration: none;
     font-weight: bold;
 }
@@ -512,7 +512,7 @@ a:hover {
     top: 10px; /* Distance from the top */
     right: 20px; /* Distance from the right */
     font-size: 14px; /* Smaller font size */
-    color: yellow; /* Subtle yellow color */
+    color: blue; /* Subtle yellow color */
     font-style: italic; /* Italicizes the text */
 }
 /* Justify Text in Specific Sections */
