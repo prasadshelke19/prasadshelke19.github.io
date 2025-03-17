@@ -366,9 +366,9 @@ html {
 
 .award-item h3 {
     margin: 0 0 10px 0; /* Remove default margin */
-    font-size: 1.5em;
-    font-weight: 600;	
-    color: teal; /* Warm orange for headings */
+    font-size: 1.6em;
+    font-weight: 550;	
+    color: green; /* Warm orange for headings */
 }
 
 .award-item p {
@@ -379,7 +379,7 @@ html {
 
 /* Skills Section Styling */
 #skills {
-    background: linear-gradient(135deg, #f3ecf6, #eef5ff); /* Subtle gradient background */
+    background: linear-gradient(135deg, white, mistyrose, white, mistyrose, white); /* Subtle gradient background #f3ecf6, #eef5ff */
     border: 1px solid #ddd; /* Light border */
     padding: 30px;
     position: relative;
@@ -403,7 +403,7 @@ html {
 }
 
 .skill-category h3 {
-    color: #6a11cb; /* Deep purple heading color */
+    color: teal; /* Deep purple heading color #6a11cb */
     font-size: 1.5em;
     display: flex;
     align-items: center;
