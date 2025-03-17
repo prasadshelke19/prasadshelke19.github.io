@@ -1,6 +1,6 @@
 /* General Body Styling */
 body {
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'Open+Sans', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -13,20 +13,81 @@ header {
     background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient blue-purple */
     color: white;
     text-align: center;
-    padding: 40px 20px; /* Increased padding for a bolder look */
+/*    padding: 40px 20px; /* Increased padding for a bolder look */ 
+    padding: 30px 20px 20px 20px; /* Top = 20px, Right = 10px, Bottom = 40px, Left = 10px */	
     border-bottom: 5px solid #fff; /* White border for contrast */
 }
 
+/* H1 Styling */
 header h1 {
     margin: 0;
-    font-size: 2.8em; /* Slightly larger font size */
-    letter-spacing: 2px; /* Adds spacing between letters */
+/*    font-family: 'Rock+Salt', cursive;*/
+    font-family: 'Bebas+Neue', sans-serif;
+    font-size: 3.3em;
+    letter-spacing: 2px;
+    color: white;
+    text-shadow: 
+        -2px -2px 0 black,  /* Top-left shadow */
+        1px -1px 0 black,   /* Top-right shadow */
+        -1px 1px 0 black,   /* Bottom-left shadow */
+        2px 2px 0 black;    /* Bottom-right shadow */	
 }
 
-header p {
+/* Alarming Text Styling */
+.alarm-text {
+    display: inline-block;
+    padding: 10px 20px;
+    /*background: white; /*rgba(255, 0, 0, 0.2); /* Semi-transparent red (RGB: 255, 0, 0, Opacity: 0.2) */
+    border-radius: 10px;
+    color: peach; /* Bright red (RGB: 255, 0, 0) */
     font-size: 1.2em;
-    margin-top: 10px;
+    font-weight: bold;
+    text-shadow: 
+        0 0 5px black,   /* Bright red glow (RGB: 255, 0, 0) */
+        0 0 10px #FFE5B4,  /* Orange-red glow (RGB: 255, 69, 0) */
+        0 0 20px #FFE5B4,  /* Tomato glow (RGB: 255, 99, 71) */
+        0 0 40px #FFE5B4;  /* Yellow-orange glow (RGB: 255, 165, 0) */
+    animation: alarm-glow 1.5s infinite;
+}
+
+/* Glowing Animation */
+@keyframes alarm-glow {
+    0% { 
+        text-shadow: 
+            0 0 5px black,   /* Bright red glow (RGB: 255, 0, 0) */
+            0 0 10px #FFE5B4,  /* Orange-red glow (RGB: 255, 69, 0) */
+            0 0 20px #FFE5B4,  /* Tomato glow (RGB: 255, 99, 71) */
+            0 0 40px #FFE5B4;  /* Yellow-orange glow (RGB: 255, 165, 0) */
+    }
+    50% { 
+        text-shadow: 
+            0 0 10px blue,  /* Bright red glow (RGB: 255, 0, 0) */
+            0 0 20px #FFE5B4,  /* Orange-red glow (RGB: 255, 69, 0) */
+            0 0 30px #FFE5B4,  /* Tomato glow (RGB: 255, 99, 71) */
+            0 0 50px #FFE5B4;  /* Yellow-orange glow (RGB: 255, 165, 0) */
+    }
+    100% { 
+        text-shadow: 
+            0 0 5px green,   /* Bright red glow (RGB: 255, 0, 0) */
+            0 0 10px #FFE5B4,  /* Orange-red glow (RGB: 255, 69, 0) */
+            0 0 20px #FFE5B4,  /* Tomato glow (RGB: 255, 99, 71) */
+            0 0 40px #FFE5B4;  /* Yellow-orange glow (RGB: 255, 165, 0) */
+    }
+}
+/* Style for the first paragraph (p1) */
+header .p1 {
+    font-size: 1.3em;
+    margin: 25px 0; /* Adds spacing above and below */
     font-weight: 400;
+    color: white; /* Ensure it matches the header's text color */
+}
+
+/* Style for the second paragraph (p2) */
+header .p2 {
+    font-size: 1.0em;
+    margin: 7px 0; /* Adds spacing above and below */
+    font-weight: 400;
+    color: white; /* Ensure it matches the header's text color */
 }
 /* Smooth Scrolling */
 html {
@@ -187,7 +248,7 @@ html {
 
 /* Conferences and Talks Section */
 #talks {
-    background: linear-gradient(135deg, #f3ecf6, #eef5ff); /* Subtle gradient background */
+    background: linear-gradient(180deg, #eef5ff, #FFA500, #eef5ff); /* Subtle gradient background */
     border: 1px solid #ddd; /* Light border */
     padding: 30px;
     position: relative;
@@ -247,9 +308,19 @@ html {
     word-wrap: break-word;
 }
 
-.presentation-type {
-    font-size: 0.9em;
-    color: #2575fc;
+.presentation-type-poster {
+    font-size: 1.0em;
+    color: #228B22;
+    font-weight: bold;
+}
+.presentation-type-oral {
+    font-size: 1.0em;
+    color: #8B0000;
+    font-weight: bold;
+}
+.presentation-type-invited {
+    font-size: 1.2em;
+    color: blue;
     font-weight: bold;
 }
 
@@ -295,8 +366,9 @@ html {
 
 .award-item h3 {
     margin: 0 0 10px 0; /* Remove default margin */
-    font-size: 1.4em;
-    color: black; /* Warm orange for headings */
+    font-size: 1.5em;
+    font-weight: 600;	
+    color: teal; /* Warm orange for headings */
 }
 
 .award-item p {
