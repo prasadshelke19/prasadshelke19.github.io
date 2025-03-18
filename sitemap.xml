@@ -7,28 +7,4 @@
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
-
-    <!-- index Page -->
-    <url>
-        <loc>https://prasadshelke19.github.io/index.html</loc>
-        <lastmod>2025-03-16</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url> 
-
-    <!-- Publications Page (if applicable) 
-    <url>
-        <loc>https://prasadshelke19.github.io/publications.html</loc>
-        <lastmod>2024-01-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url> -->
-
-    <!-- Talks Page (if applicable) 
-    <url>
-        <loc>https://prasadshelke19.github.io/talks.html</loc>
-        <lastmod>2024-01-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url> -->
 </urlset>
