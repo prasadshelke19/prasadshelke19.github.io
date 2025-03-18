@@ -76,18 +76,18 @@ header h1 {
 }
 /* Style for the first paragraph (p1) */
 header .p1 {
-    font-size: 1.3em;
-    margin: 25px 0; /* Adds spacing above and below */
+    font-size: 1.4em;
+    margin: 20px 0; /* Adds spacing above and below */
     font-weight: 400;
     color: black; /* Ensure it matches the header's text color */
 }
 
 /* Style for the second paragraph (p2) */
 header .p2 {
-    font-size: 1.0em;
+    font-size: 1.1em;
     margin: 7px 0; /* Adds spacing above and below */
-    font-weight: 400;
-    color: black; /* Ensure it matches the header's text color */
+    font-weight: 600;
+    color: maroon; /* Ensure it matches the header's text color */
 }
 /* Smooth Scrolling */
 html {
@@ -442,7 +442,7 @@ footer {
     text-align: center;
     margin-top: 40px;
     padding: 20px 0;
-    background: linear-gradient(135deg, #ede7f6, #fff3e0, #ede7f6); /* Gradient blue-purple */
+    background: linear-gradient(135deg, #ede7f6, #fff3e0, #fff3e0, #ede7f6); /* Gradient blue-purple */
     color: black;
     border-top: 5px solid #fff; /* White border for contrast */
 }

@@ -24,11 +24,11 @@
     <div class="last-updated">
         Last Updated: March 2025
     </div>
-    <h1>PRASAD B SHELKE</h1>
+    <h1>PRASAD SHELKE</h1>
     <p class="p1">Climate Scientist | Atmospheric Blocking and Heat Extremes</p>
     <p class="p2">
         <em>
-            <span class="alarm-text">
+            <span <!--class="alarm-text"> -->
                 "Our time is limited on this planet. Let’s solve the intricate complexities of Earth System Science, 
                 because Climate Change is NOT ON VACATION FOR TOO LONG!"
             </span>
