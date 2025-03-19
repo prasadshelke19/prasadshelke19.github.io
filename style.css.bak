@@ -23,14 +23,14 @@ header h1 {
     margin: 0;
 /*    font-family: 'Rock+Salt', cursive;*/
     font-family: 'Open+Sans', sans-serif;
-    font-size: 3.0em;
+    font-size: 2.8em;
     letter-spacing: 2px;
-    color: rebeccapurple;
+    color: black;
     text-shadow: 
         -2px -2px 0 black,  /* Top-left shadow */
-        1px -1px 0 pink,   /* Top-right shadow */
+        /*1px -1px 0 black,   /* Top-right shadow */
         -1px 1px 0 black,   /* Bottom-left shadow */
-/*        2px 2px 0 white;    /* Bottom-right shadow */	
+        /*2px 2px 0 black;    /* Bottom-right shadow */	
 }
 
 /* Alarming Text Styling */
@@ -87,7 +87,7 @@ header .p2 {
     font-size: 1.1em;
     margin: 7px 0; /* Adds spacing above and below */
     font-weight: 600;
-    color: maroon; /* Ensure it matches the header's text color */
+    color: rebeccapurple; /* Ensure it matches the header's text color */
 }
 /* Smooth Scrolling */
 html {
