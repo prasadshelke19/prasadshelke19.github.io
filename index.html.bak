@@ -230,19 +230,12 @@
                 <p><em>(June 2025)</em></p>
                 <p><strong><span style="color: black;">Meteorological Society of New Zealand</strong></span></p>
             </div>
-            
 			<!-- 2024 -->
             <div class="award-item">
                 <h3>Endowment Development Grant</h3>
                 <p><em>(April 2024)</em></p>
                 <p><strong><span style="color: black;">Antarctic Research Centre, New Zealand</strong></span></p>
             </div>
-            <div class="award-item">
-                <h3>Marie Skłodowska Curie Fellowship</h3>
-                <p><em>(January 2021)</em></p>
-                <p><strong><span style="color: black;">European Commission</strong></span> <br><em>(Early Stage Researcher - ESR Category)</em></p>
-            </div>
-
 
             <!-- 2023 -->
             <div class="award-item">
@@ -250,21 +243,11 @@
                 <p><em>(August 2024)</em></p>
                 <p><strong><span style="color: black;">Meteorological Society of New Zealand</strong></span></p>
             </div>
-            <div class="award-item">
-                <h3>Wellington Doctoral Scholarship</h3>
-                <p><em>(December 2022)</em></p>
-                <p><strong><span style="color: black;">Victoria University of Wellington, New Zealand</strong></span></p>
-            </div>
 
             <div class="award-item">
                 <h3>Young Researcher Travel Grant 2023 (Winner)</h3>
                 <p><em>(September 2023)</em></p>
                 <p><strong><span style="color: black;">Geosciences Society of New Zealand</strong></span></p>
-            </div>
-            <div class="award-item">
-                <h3>Research Fellowship</h3>
-                <p><em>(July 2019)</em></p>
-                <p><strong><span style="color: black;">Department of Science and Technology (Ministry of Earth Sciences), India</strong></span></p>
             </div>
 
             <div class="award-item">
@@ -273,6 +256,23 @@
                 <p><strong><span style="color: black;">Meteorological Society of New Zealand</strong></span></p>
             </div>
 
+            <div class="award-item">
+                <h3>Wellington Doctoral Scholarship</h3>
+                <p><em>(December 2022)</em></p>
+                <p><strong><span style="color: black;">Victoria University of Wellington, New Zealand</strong></span></p>
+            </div>
+			
+            <div class="award-item">
+                <h3>Marie Skłodowska Curie Fellowship</h3>
+                <p><em>(January 2021)</em></p>
+                <p><strong><span style="color: black;">European Commission</strong></span> <br><em>(Early Stage Researcher - ESR Category)</em></p>
+            </div>
+			
+            <div class="award-item">
+                <h3>Research Fellowship</h3>
+                <p><em>(July 2019)</em></p>
+                <p><strong><span style="color: black;">Department of Science and Technology (Ministry of Earth Sciences), India</strong></span></p>
+            </div>
             <!-- 2022 -->
 
             <!-- 2021 -->
@@ -346,7 +346,7 @@
         <h2 class="contact-header">Contact</h2>
         <p><strong>📧 Email:</strong> <a href="mailto:Shelkepras@myvuw.ac.nz">Prasad Shelke</a></p>
         <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/prasad-shelke-121288135/">Prasad Shelke</a></p>
-        <p><strong>🐦 Follow on Bluesky:</strong> <a href="https://bsky.app/profile/prasadshelke.bsky.social">Prasad Shelke</a></p>
+        <!-- <p><strong>🐦 Follow on Bluesky:</strong> <a href="https://bsky.app/profile/prasadshelke.bsky.social">Prasad Shelke</a></p> -->
         <a href="#about">About Me</a> | 
         <a href="#research">Research</a> | 
         <a href="#publications">Publications</a> | 
