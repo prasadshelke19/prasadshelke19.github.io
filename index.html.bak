@@ -22,7 +22,7 @@
 <header>
     <!-- Last Updated Date -->
     <div class="last-updated">
-        Last Updated: March 2025
+        Last Updated: June 2025
     </div>
     <h1>PRASAD B SHELKE</h1>
     <p class="p1">Climate Scientist | Atmospheric Blocking and Heat Extremes</p>
@@ -93,6 +93,28 @@
             <li><strong>Tipping the scales:The butterfly effect in Atmospheric Blocking and Temperature Extremes</strong></li>
         </ul>
     </section>
+
+	<!-- Research Projects Section -->
+	<section id="research-projects">
+		<h2>Projects</h2>
+		<div class="projects-grid">
+			<!-- Project 1 -->
+			<div class="project-item">
+				<h3>Model representation of atmospheric blocking events</h3>
+			<!-- 	<p><em>(Duration: Month Year - Month Year)</em></p> 
+				<p><strong>Institution/Organization:</strong> Name of Institution</p> -->
+				<p><strong>Description:</strong> Brief description of the project, including objectives, methodologies, and outcomes.</p>
+			</div>
+			<!-- Project 2 -->
+			<div class="project-item">
+				<h3>Project Title 2</h3>
+				<p><em>(Duration: Month Year - Month Year)</em></p>
+				<p><strong>Institution/Organization:</strong> Name of Institution</p>
+				<p><strong>Description:</strong> Brief description of the project, including objectives, methodologies, and outcomes.</p>
+			</div>
+			<!-- Add more projects as needed -->
+		</div>
+	</section>
 
     <!-- Publications Section -->
     <section id="publications">
