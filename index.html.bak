@@ -88,19 +88,20 @@
 
     <!-- Research Section -->
     <section id="research">
-        <h2>Doctoral Dissertation</h2>
+        <h2>Doctoral dissertation</h2>
         <ul>
-            <li><strong>Atmospheric Blocking and Heat Extremes Under a Warming Climate.</strong></li>
+            <li><strong>Tipping the scales:The butterfly effect in Atmospheric Blocking and Temperature Extremes</strong></li>
         </ul>
     </section>
 
     <!-- Publications Section -->
     <section id="publications">
-        <h2>Publications</h2>
+        <h2>First author publications</h2>
         <ul>
-            <li>Shelke, P. and Renwick, J. A. (2025). <em><strong>Atmospheric Blocking Representation in the Community Earth System Model Large Ensemble 2.</strong></em> Climate Dynamics (Under Review).</li>
-			<li>Shelke, P. and Renwick, J. A. (2025). <em><strong>The butterfly effect in global heat extremes.</strong></em> (In preparation).</li>
-			<li>Shelke, P. and Renwick, J. A. (2025). <em><strong>Blocking-driven heat extremes in a warming world.</strong></em> (In preparation).</li>
+            <li>Shelke, P. and Renwick, J. A. (2025). <em><strong>Northern Hemispheric atmospheric blocking representation in the Community Earth System Model Large Ensemble 2.</strong></em> Climate Dynamics (Under Review).</li>
+            <li>Shelke, P. and Renwick, J. A. (2025). <em><strong>Shadows of stillness: Southern Hemisphere blocking patterns.</strong></em> (In preparation).</li>			
+			<li>Shelke, P. and Renwick, J. A. (2025). <em><strong>The butterfly effect in temperature extremes.</strong></em> (In preparation).</li>
+			<li>Shelke, P. and Renwick, J. A. (2025). <em><strong>'Chaos' driving future blocking-extreme relationship.</strong></em> (In preparation).</li>
         </ul>
     </section>
 
@@ -346,7 +347,7 @@
         <h2 class="contact-header">Contact</h2>
         <p><strong>📧 Email:</strong> <a href="mailto:Shelkepras@myvuw.ac.nz">Prasad Shelke</a></p>
         <p><strong>🔗 LinkedIn:</strong> <a href="https://www.linkedin.com/in/prasad-shelke-121288135/">Prasad Shelke</a></p>
-        <!-- <p><strong>🐦 Follow on Bluesky:</strong> <a href="https://bsky.app/profile/prasadshelke.bsky.social">Prasad Shelke</a></p> -->
+        <p><strong>🐦 Follow on Bluesky:</strong> <a href="https://bsky.app/profile/prasadshelke.bsky.social">Prasad Shelke</a></p> 
         <a href="#about">About Me</a> | 
         <a href="#research">Research</a> | 
         <a href="#publications">Publications</a> | 
@@ -354,7 +355,7 @@
         <a href="#honours-and-awards">Honours & Awards</a> |
         <a href="#skills">Skills</a>
     </p>
-        <p>&copy;2025 Prasad Shelke All rights reserved.</p>
+        <p>&copy;2025 Prasad Shelke - All rights reserved.</p>
     </footer>
 </body>
 </html>
