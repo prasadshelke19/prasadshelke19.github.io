@@ -61,9 +61,10 @@
     <div class="about-container">
         <div class="about-text">
             <p class="justified-text">
-                I am a PhD candidate in Atmospheric Science at 
+                I am a PhD candidate in Atmospheric Sciences at 
                 <a href="https://www.wgtn.ac.nz/" target="_blank"><span style="color: black;">Victoria University of Wellington</span></a>, 
-                New Zealand. My research focuses on understanding hemispheric asymmetry in simulating atmospheric blocking and heat extremes under a warming climate.
+                New Zealand working with my amazing mentor<a href="https://people.wgtn.ac.nz/james.renwick/" target="_blank"><span style="color: black;">Prof. James Renwick</span></a>. 
+				My research focuses on understanding the role of chaos/internal climate variability in atmospheric blocking and heat extremes under a warming climate.
             </p>
             <p class="justified-text">
                 With a strong foundation in Numerical Modeling, AI/ML, and Climate Science, 
@@ -90,7 +91,7 @@
     <section id="research">
         <h2>Doctoral dissertation</h2>
         <ul>
-            <li><strong>Tipping the scales:The butterfly effect in Atmospheric Blocking and Temperature Extremes</strong></li>
+            <li><strong>Tipping the scales: The butterfly effect in Atmospheric Blocking and Temperature Extremes</strong></li>
         </ul>
     </section>
 
