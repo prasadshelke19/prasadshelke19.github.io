@@ -52,7 +52,7 @@
 			<a href="#research">Research</a> | 
 			<a href="#publications">Publications</a> | 
 			<a href="#talks">Conferences and Talks</a> | 
-			<a href="#awards">Honours & Awards</a> |
+			<a href="#awards">Honours and Awards</a> |
 			<a href="#skills">Skills</a>
 	</div>
     <!-- About Section -->
@@ -122,10 +122,10 @@
     <section id="publications">
         <h2>First author publications</h2>
         <ul>
-            <li>Shelke, P. and Renwick, J. A. (2025a). <em><strong>Northern Hemispheric atmospheric blocking representation in the Community Earth System Model Large Ensemble 2.</strong></em> Climate Dynamics (Under Review).</li>
-            <li>Shelke, P. and Renwick, J. A. (2025b). <em><strong>Southern Hemisphere atmospheric blocking representation in the Community Earth System Model Large Ensemble 2.</strong></em> (In preparation).</li>			
-			<li>Shelke, P. and Renwick, J. A. (2025c). <em><strong>The butterfly effect in temperature extremes.</strong></em> (In preparation).</li>
-			<li>Shelke, P. and Renwick, J. A. (2025d). <em><strong>'Chaos' driving future blocking-extreme relationship.</strong></em> (In preparation).</li>
+            <li>Shelke, P. and Renwick, J. A. (2025a). <em><strong>Northern Hemispheric atmospheric blocking representation in the Community Earth System Model Large Ensemble 2.</strong></em> (In review).</li>
+            <li>Shelke, P. and Renwick, J. A. (2025b). <em><strong>Southern Hemisphere atmospheric blocking representation in the Community Earth System Model Large Ensemble 2.</strong></em> (In review).</li>			
+			<li>Shelke, P. and Renwick, J. A. (2025c). <em><strong>The butterfly effect in global temperature extremes.</strong></em> (In preparation).</li>
+			<li>Shelke, P. and Renwick, J. A. (2025d). <em><strong>Understanding 'Chaos' in blocking-extreme relationship.</strong></em> (In preparation).</li>
         </ul>
     </section>
 
