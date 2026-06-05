@@ -226,6 +226,47 @@ html {
     line-height: 1.6;
 }
 
+/* Research Projects Section Styling */
+#research-projects {
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffffff, #ede7f6);
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between projects */
+}
+
+.project-item {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-item h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.project-item p {
+    margin: 5px 0;
+    line-height: 1.6;
+    color: #555;
+}
+
 /* Publications Section Styling */
 #publications {
     margin: 40px auto;
