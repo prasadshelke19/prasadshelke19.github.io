@@ -260,6 +260,7 @@ main {
 }
 
 .future-card {
+  border-top-color: var(--green);
   background: linear-gradient(135deg, #ffffff, #f3f8f4);
 }
 
