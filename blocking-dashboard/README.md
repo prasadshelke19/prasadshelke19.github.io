@@ -1,195 +1,170 @@
-# Blocking Observatory — unpublished review build
+# Blocking Observatory — real ERA5 review build
 
-An offline-capable atmospheric blocking explorer for Prasad Shelke's GitHub
-Pages repository. This branch adds a self-contained `blocking-dashboard/`
-directory; it does not change the existing home page, Pages settings, or
-deployment branch. No deployment or schedule is enabled.
+This unpublished review branch adds `blocking-dashboard/` to Prasad Shelke's
+GitHub Pages repository. The existing home page, Pages configuration and live
+website are unchanged. No deployment or automatic schedule is active.
+
+## Current data connection
+
+The dashboard now loads **real ERA5 / preliminary ERA5T geopotential at 500 hPa**
+from [Google Research's public ARCO-ERA5 mirror](https://github.com/google-research/arco-era5).
+No CDS account token is required for this public source.
+
+- Displayed observations: **10–19 October 2026**, at **00:00 UTC** each day.
+- Retrieved observations: **1–19 October**, providing earlier days for temporal
+  persistence at the beginning of the displayed window.
+- Latest verified mirror date: **19 October 2026**; source metadata was last
+  updated on **25 October 2026**. Availability follows the mirror, not an
+  assumed real-time cut-off.
+- Grid: **5° grid-point sampling** of the mirror's 0.25° analysis-ready field.
+  This is a coarse review grid, configurable in the downloader.
+- Available: real Z500 contours, TR blocking masks, pending runs, regional
+  weighting, daily calendar, aggregation of the observed sample, and exports.
+- **PPA and historical climatology are unavailable** because their historical
+  Z500 reference has not been downloaded. Their controls are disabled and
+  missing reference values are not represented as zero blocking.
+- Dates outside the observed window are visibly unavailable. Monthly, seasonal
+  and annual views are labelled incomplete and use actual valid observations.
+
+The observed-data asset is `data/era5.js`; source details are preserved in
+`data/era5-provenance.json`. The site does **not** fall back to synthetic data
+if this asset is missing. The original demonstration generator/data are
+retained only as development fixtures and are no longer loaded by the page.
 
 ## View it privately
 
-Download this branch as a ZIP, extract it, and open
-`blocking-dashboard/index.html` in a current Chrome, Edge, Firefox, or Safari.
-The scripts, geography and demonstration data are bundled locally. No server,
-API token or internet connection is needed to explore the preview. The data
-loader needs browser support for `DecompressionStream('gzip')`.
+Open `blocking-dashboard/index.html` after extracting the branch ZIP in a
+current browser. All code, geography and observed data are included locally.
+The single-file `Blocking_Observatory_ERA5_Preview.html` supplied in the review
+handoff can also be downloaded and opened in a browser. Browser file-preview
+panes may suppress scripts; open the downloaded HTML file itself.
 
-A single-file `Blocking_Observatory_Preview.html` is also supplied with the
-review handoff. Download it and open it in a browser. Browser file-preview
-panes may suppress JavaScript; use the actual downloaded file.
+This source repository is public, so branch source is publicly readable. The
+website is not deployed. Do not put a confidential new method into this public
+repository.
 
-The source repository is public, so a review branch is publicly readable source.
-The dashboard itself is **not deployed**. Do not put confidential data or a
-new unpublished method into this public repository.
+## Scientific definitions
 
-## What works
+Method source: Shelke & Renwick (2026), GRL,
+[doi:10.1029/2025GL120428](https://doi.org/10.1029/2025GL120428), sections 2.1–2.2.
+ERA5 pressure-level dataset:
+[doi:10.24381/cds.bd0915c6](https://doi.org/10.24381/cds.bd0915c6).
 
-- Global 30°–75° maps for both hemispheres, hemisphere filters and regional zoom.
-- PPA and TR diagnostics calculated on the same underlying synthetic Z500 fields.
-- Daily anomaly/height contours with confirmed and pending blocking outlines.
-- Daily blocking masks; monthly, seasonal, annual and custom-reference frequency maps.
-- Date picker, previous/next day, animation, interactive calendar and shareable state.
-- Region-specific area weighting, blocked-day counts, equivalent blocked days,
-  daily/monthly/seasonal/annual series and a monthly climatological comparison.
-- Reference years plus all-year, seasonal or monthly climatology maps.
-- CSV and SVG export, keyboard-operable controls and responsive layout.
+Convert instantaneous 00:00 UTC geopotential from m² s⁻² to geopotential height
+with **Z500 = geopotential / 9.80665**. A daily mean is not substituted.
 
-The controls operate on an explicitly labelled **synthetic** archive from
-1980 through 23 October 2026. It is not a record of actual weather or ERA5
-conditions. A deterministic generator constructs height fields and runs the
-same scientific code as the real-data pipeline. No KPI is hard-coded as an
-observed blocking statistic. Maps deliberately use a coarse 5° demonstration
-grid. Fields are quantized to metres **after** detection for compact display;
-this does not change the detector thresholds.
+**PPA (pending historical reference):** anomaly from a gridpoint calendar-day
+Z500 climatology, ≥100 m for ≥5 consecutive days. The intended reference is
+1980–2014. All days in a qualifying run are blocked. Changing a blocking-
+frequency comparison in the UI does not redefine this height reference.
 
-## Scientific definitions and review points
-
-Primary source: Shelke, P. B., & Renwick, J. A. (2026), *Southern Hemispheric
-atmospheric blocking patterns in CESM-LENS2: Effects of reversal versus anomaly
-approaches*, GRL, doi:[10.1029/2025GL120428](https://doi.org/10.1029/2025GL120428),
-sections 2.1–2.2.
-
-Input is daily instantaneous **00:00 UTC geopotential at 500 hPa**, rather than
-a daily mean. Convert geopotential (m² s⁻²) to geopotential height (m) by
-dividing by **9.80665**. The pressure-level CDS dataset is
-[`reanalysis-era5-pressure-levels`](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-pressure-levels),
-doi:[10.24381/cds.bd0915c6](https://doi.org/10.24381/cds.bd0915c6).
-
-**PPA:** subtract a calendar-day height climatology at every grid point. An
-anomaly **≥100 m for ≥5 consecutive days** qualifies. Every day in the run
-is included. The default height reference is **1980–2014**, matching the
-paper's present-day analysis period. Rebuilding with another height reference
-requires the pipeline, not merely changing the frequency comparison in the UI.
-
-**TR:** define `q = abs(latitude)` increasing poleward and
-`H(q) = Z500(sign(latitude) * q)`. With Δ=15°:
+**TR:** use a poleward-positive coordinate `q = abs(latitude)` and
+`H(q) = Z500(sign(latitude) * q)`, with Δ = 15°:
 
 ```
-equatorward gradient = (H(q) − H(q−15)) / 15 > 0 m/degree
-poleward gradient   = (H(q+15) − H(q)) / 15 < −10 m/degree
-subtropical gradient= (H(q−15) − H(q−30)) / 15 < −5 m/degree
+(H(q) − H(q−15)) / 15 > 0 m/degree
+(H(q+15) − H(q)) / 15 < −10 m/degree
+(H(q−15) − H(q−30)) / 15 < −5 m/degree
 ```
 
-All conditions must hold at a grid point for **≥4 consecutive days**. A
-poleward-positive coordinate makes the SH sign convention explicit. Numerical
-tests verify symmetric responses to mirrored NH/SH fields and rejection of a
-normal westerly profile. **The NH version is an adaptation, with the same
-four-day setting, not a validated claim from this SH paper. Compare both
-implementations with the author's original code before scientific release.**
+All three conditions persist for ≥4 consecutive days. The NH diagnostic uses
+an explicitly mirrored version with the same duration and remains an
+adaptation requiring author validation against original code. The regional
+boxes are editable examples, not an exact transcription of paper Figure S1.
 
-Other declared choices:
+Missing dates and NaNs break persistence. Short ongoing runs remain pending;
+qualifying sequences are marked retroactively. Full builds overlap years,
+so December–January runs continue. Leap-day height climatology uses the mean
+of 28 February and 1 March. DJF belongs to the January/February year.
 
-- Gap days and NaNs break persistence. Missing cells are excluded from
-  denominators, not treated as unblocked cells.
-- Runs cross year boundaries through overlapping processing windows. A short
-  ongoing run is pending. Once it qualifies, the complete run is marked.
-- Calendar-day keys use month/day; 29 February's height reference is the mean
-  of 28 February and 1 March. No unstated smoothing is applied.
-- DJF belongs to the year containing January/February. A missing preceding
-  December makes that season incomplete; this is displayed.
-- Frequency = confirmed blocked samples / valid samples. Incomplete periods
-  are labelled and future days are unavailable, not zero.
-- Area weights are cosine(latitude), on a regular latitude–longitude grid.
-  Regional blocked days use at least one confirmed cell; equivalent blocked
-  days are the sum of daily area fractions. Neither is an object-tracked event count.
-- Regional boxes are editable examples in `pipeline/bundle.py`, **not** claimed
-  exact transcriptions of Figure S1. The supplement was not retrievable in this
-  session. Replace with the author's exact regional bounds during validation.
-- The new unpublished method has not been invented or implemented. Add it
-  later through the diagnostic output/schema and matching UI controls.
+Blocked area uses cosine-latitude weights over valid cells. Regional blocked
+days mean ≥1 confirmed grid cell; equivalent blocked days sum daily area
+fractions. These are not object-tracked blocking-event counts. The author's
+new detection method has not been invented or implemented here.
 
-## Connect real ERA5 without exposing a token
+## Lossless public-data access and resource limits
 
-The current handoff has no CDS credentials and contains no observed ERA5 data.
-Configure the account locally or use an encrypted GitHub Actions secret; never
-place the token in JavaScript, a commit, a URL, or the data directory.
+The public mirror stores each geopotential time step as a 37-level Blosc
+chunk. The downloader reads only the compressed blocks intersecting 500 hPa
+using HTTP byte ranges and the public Blosc decoder. It validates coordinates,
+units, pressure level, time origin, response ranges, object identity and the
+physical plausibility of the resulting height field.
 
-1. Follow the official [CDS API setup](https://cds.climate.copernicus.eu/how-to-api)
-   and accept the pressure-level dataset licence on CDS.
-2. From the repository root, install the processing dependencies:
+A genuine 19 October field extracted this way was checked **bit-for-bit**
+against an independent full 37-level decode. Tests also cover shuffled and
+unshuffled blocks, uncompressed chunks, changed dimensions, physical block
+ordering and transfer-budget enforcement.
 
-   ```bash
-   python -m pip install -r blocking-dashboard/pipeline/requirements.txt
-   ```
+Defaults are deliberately bounded: **2 workers, at most 31 days, 80 MB of
+field transfers, and no individual field range larger than 8 MB**. A server
+that ignores a range is rejected before its body is downloaded. Complete
+monthly cache files are replaced only after validation. No token is stored
+in browser assets or source.
 
-3. Set `CDSAPI_KEY` securely in your execution environment, or use your existing
-   local `.cdsapirc` (git-ignored). Bootstrap the monthly archive:
+To reproduce the current sample, from the repository root:
 
-   ```bash
-   python blocking-dashboard/pipeline/download_era5.py --start-year 1980 --grid 2.5
-   python blocking-dashboard/pipeline/build_data.py --reference-start 1980 --reference-end 2014
-   ```
+```bash
+python -m pip install -r blocking-dashboard/pipeline/requirements.txt
+python blocking-dashboard/pipeline/download_arco.py --cache working-data/era5-arco-recent --start 2026-10-01 --end 2026-10-19 --grid 5 --workers 2 --max-transfer-mb 80 --max-days 19
+python blocking-dashboard/pipeline/build_recent.py --cache working-data/era5-arco-recent --start 2026-10-10
+python blocking-dashboard/pipeline/make_preview.py --output Blocking_Observatory_ERA5_Preview.html
+```
 
-   Downloading decades of global fields is an initial data-preparation job,
-   potentially hours or longer depending on the CDS queue. Downloads are
-   cached as `working-data/era5/era5-z500-YYYY-MM.nc`, outside public browser
-   assets. Interrupted jobs can be resumed. The detector processes one year
-   at a time; each file must use one consistent global grid. Grid resolution
-   is configurable; re-bootstrap into a separate cache if you change it.
+To request the mirror's latest rolling sample, omit `--start` and `--end`.
+The downloader then uses the latest 19 verified dates; the exporter displays
+10 days with earlier observations available to test persistence.
 
-4. If matching ERA5 files are already available on your research system, place
-   the monthly NetCDFs into that cache and run only `build_data.py`. It accepts
-   common CDS dimension names, 500-hPa levels, longitude conventions, and
-   final/preliminary `expver` mixtures. It rejects incorrect units, times,
-   pressure levels, grids and implausible heights.
-5. A successful build atomically replaces `data/era5.js` with a verified
-   observed-data bundle. The website automatically prefers it over demo data
-   and changes the source notices. A failed build retains the previous bundle.
+## Historical backfill — pending approval
 
-ERA5T is usually about **five days delayed**, and preliminary fields can later
-be revised. The date is UTC and comes from verified records, not the computer's
-display date. Retrieval refreshes the last 100 days to pick up final ERA5.
-Daily samples at the newest persistence edge may still be pending.
+A complete historical record is required for PPA, arbitrary climatological
+comparisons and full-year statistics. Header-only probes of six representative
+source dates estimate **about 41 GB** of public-mirror network transfer for
+1980–19 October 2026. The uncompressed sampled NetCDF field volume is about
+**182 MB** before filesystem/compression overhead; byte-range extraction does
+not retain the much larger full-resolution source chunks.
 
-The first production baseline must contain every reference day and grid
-cell. Outside the reference, missing days are preserved and visibly unavailable.
-The baseline is not recomputed in the browser. Changing the comparison years
-there recomputes the selected **blocking frequency** climatology from the
-existing archive.
+The original high-concurrency historical download was rejected by automatic
+approval review before transfer. **It has not been run.** A proposed replacement
+is capped at **50 GB**, with **2 workers** and resumable monthly checkpoints.
+The cap bounds transfer; reaching it stops the job and preserves complete
+cached months. This larger run awaits user approval.
 
-## Daily updates — deliberately inactive
+After that approval, the concrete backfill commands would be:
 
-`pipeline/era5-update.yml.disabled` is a reviewed workflow **template** outside
-`.github/workflows`. It cannot execute. It retrieves/validates data and
-commits only the resulting observed-data asset; it contains no Pages deploy.
-Its proposed daily schedule is 15:35 UTC, after the usual ERA5T availability
-window, without assuming availability is guaranteed.
+```bash
+python blocking-dashboard/pipeline/download_arco.py --cache working-data/era5-arco-5deg --start 1979-12-22 --end 2026-10-19 --grid 5 --workers 2 --max-transfer-mb 50000 --max-days 17200
+python blocking-dashboard/pipeline/build_data.py --cache working-data/era5-arco-5deg --archive-start 1980 --reference-start 1980 --reference-end 2014
+```
 
-When the data/methods are validated and daily updates are wanted:
+The December 1979 halo supports January 1980 persistence; the exported archive
+starts in 1980. The complete exporter enables both methods and comparison
+controls automatically. A failed or incomplete build retains the existing
+observed-data asset.
 
-1. Seed a runner-accessible historical cache. The separate disabled bootstrap
-   workflow can retrieve year ranges in resumable jobs; do this before enabling
-   the daily template.
-2. Configure the encrypted repository secret `CDSAPI_KEY`.
-3. Copy the desired templates into `.github/workflows/` on the chosen default
-   branch. Scheduled GitHub Actions run from the default branch; a feature
-   branch alone does not activate them.
-4. Choose deployment of the dashboard separately, after review. Publishing is
-   not part of either data workflow and has not been performed here.
+A CDS alternative is retained in `download_era5.py` and the disabled CDS
+workflow templates. That alternative needs an accepted CDS dataset licence
+and a securely configured API token, as documented by the
+[official CDS setup guide](https://cds.climate.copernicus.eu/how-to-api).
 
-`github-actions[bot]` pushes normally do not trigger another workflow; if
-Pages is eventually built with a custom Actions workflow, combine the data
-job and deployment explicitly at that stage. Do not assume updating the data
-asset automatically publishes a Pages build.
+## Updates and deployment
 
-## Reproduce checks and the demonstration
+`pipeline/era5-arco-recent-update.yml.disabled` is an **inactive** bounded,
+keyless recent-data workflow template. It never deploys GitHub Pages. The older
+CDS templates also remain inactive. No task, schedule or publication has been
+created. Turning a schedule on and publishing the website are separate actions.
+
+## Verification
 
 ```bash
 python -m pytest blocking-dashboard/tests -q
 node --test blocking-dashboard/tests/core.test.cjs
 node --check blocking-dashboard/app.js
-python blocking-dashboard/pipeline/make_demo.py --end 2026-10-23
 ```
 
-Tests cover sign conventions, strict gradient inequalities, persistence,
-retroactivity, missing days/cells, New Year continuity, leap days, date-line
-regions, actual denominators, CDS request fields, NetCDF normalization and a
-complete ERA5-format-to-browser-bundle integration. These use controlled
-fixtures; they are not empirical validation against actual ERA5 or author code.
+Numerical fixtures verify the algorithms and data handling; the real-field
+comparison verifies public-data extraction. These do not replace scientific
+validation against the author's original NH/SH implementation.
 
-## Attribution
-
-The interaction concept is inspired by [Extreme Weather Data and Visualization
-Hub](https://extremewx.org/). The layout, blocking application and code here are
-new; no claim of affiliation is made. Map land is Natural Earth 1:110m public
-domain geography. D3 v7.9.0 is distributed under ISC; its licence is bundled
-at `assets/d3-LICENSE`. See `THIRD_PARTY.md`.
+Map geography is Natural Earth 1:110m public-domain land. D3 7.9.0 is ISC-
+licensed. The interaction concept is inspired by [Extreme Weather Data and
+Visualization Hub](https://extremewx.org/). See `THIRD_PARTY.md`.

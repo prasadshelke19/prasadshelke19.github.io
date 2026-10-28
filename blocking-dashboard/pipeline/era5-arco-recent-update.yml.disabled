@@ -1,0 +1,36 @@
+# INACTIVE REVIEW TEMPLATE. No schedule or deployment is enabled by this file.
+# Once explicitly enabled, this reads a bounded recent sample from a public mirror.
+# It needs no CDS token and never publishes GitHub Pages.
+name: Refresh recent real ERA5 sample
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '35 15 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: era5-blocking-update
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r blocking-dashboard/pipeline/requirements.txt
+      - run: python -m pytest blocking-dashboard/tests -q
+      - run: node --test blocking-dashboard/tests/core.test.cjs
+      - name: Retrieve at most 19 days with an 80 MB field-transfer cap
+        run: python blocking-dashboard/pipeline/download_arco.py --cache working-data/era5-arco-recent --grid 5 --workers 2 --max-transfer-mb 80 --max-days 19
+      - run: python blocking-dashboard/pipeline/build_recent.py --cache working-data/era5-arco-recent
+      - name: Commit the verified observed-data assets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add blocking-dashboard/data/era5.js blocking-dashboard/data/era5-provenance.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Refresh bounded real ERA5 sample'
+          git push

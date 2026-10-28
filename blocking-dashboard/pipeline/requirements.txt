@@ -2,4 +2,6 @@ numpy>=1.26,<3
 xarray>=2024.10,<2027
 netCDF4>=1.7,<2
 cdsapi>=0.7.7,<1
+numcodecs>=0.13,<0.17
+requests>=2.31,<3
 pytest>=8,<10

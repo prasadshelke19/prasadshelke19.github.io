@@ -52,6 +52,12 @@
     const completeYears=allYears.filter(y=>data.dates.includes(`${y}-01-01`)&&data.dates.includes(`${y}-12-31`));
     makeOptions($('reference-start'),completeYears);makeOptions($('reference-end'),completeYears);
     $('reference-start').value=state.reference[0];$('reference-end').value=state.reference[1];
+    if(!completeYears.length){makeOptions($('reference-start'),['pending'],['Pending']);makeOptions($('reference-end'),['pending'],['Pending']);}
+    const referenceAvailable=data.meta.reference_available!==false&&completeYears.length>0;
+    for(const id of ['reference-start','reference-end','apply-reference'])$(id).disabled=!referenceAvailable;
+    document.querySelector('[data-period="climatology"]').disabled=!referenceAvailable;
+    const methods=data.meta.available_methods||['ppa','tr'];
+    document.querySelectorAll('[data-method]').forEach(b=>{b.disabled=!methods.includes(b.dataset.method);if(b.disabled)b.title='Requires the historical Z500 reference, which is not loaded.';});
     const slice=document.createElement('select');slice.id='climate-slice';slice.setAttribute('aria-label','Climatology season or month');
     makeOptions(slice,['all','DJF','MAM','JJA','SON',...Array.from({length:12},(_,i)=>String(i+1))],['All year','DJF','MAM','JJA','SON',...monthNames]);
     $('aggregate-controls').append(slice);
@@ -108,7 +114,9 @@
     $('timeline').hidden=!daily;$('play').disabled=!daily;$('previous-day').disabled=!daily||dateIndex.get(state.date)===0;$('next-day').disabled=!daily||dateIndex.get(state.date)===data.dates.length-1;
     const days=data.dates.filter(d=>+d.slice(0,4)===state.year);$('timeline').max=Math.max(0,days.length-1);$('timeline').value=days.indexOf(state.date);
     const hasField=data.fields&&fieldIndex.has(state.date);
-    for(const opt of $('layer').options)if(opt.value!=='blocked')opt.disabled=!daily||!hasField;
+    const fieldLayers=data.meta.available_fields||['anomaly','z500'];
+    if(state.layer!=='blocked'&&!fieldLayers.includes(state.layer))state.layer=fieldLayers[0]||'blocked';
+    for(const opt of $('layer').options)if(opt.value!=='blocked')opt.disabled=!daily||!hasField||!fieldLayers.includes(opt.value);
     if(!daily||!hasField)$('layer').value='blocked';else $('layer').value=state.layer;
     document.querySelectorAll('[data-method]').forEach(b=>{const yes=b.dataset.method===state.method;b.classList.toggle('selected',yes);b.setAttribute('aria-pressed',yes);});
     document.querySelectorAll('[data-period]').forEach(b=>{const yes=b.dataset.period===state.period;b.classList.toggle('selected',yes);b.setAttribute('aria-pressed',yes);});
@@ -120,7 +128,7 @@
       b.querySelector('.number').textContent=pct(v)+'%';b.querySelector('.activity-dot').classList.toggle('on',v!==null&&v>0);
     });
     $('method-caption').textContent=state.method==='ppa'?'PPA · ≥100 m anomaly · ≥5 consecutive days':'TR · three gradient tests · ≥4 consecutive days';
-    $('reference-note').textContent=`The PPA height-anomaly reference remains ${data.meta.anomaly_reference.join('–')}. Changing this comparison does not redefine detection. NH extension awaits author validation.`;
+    $('reference-note').textContent=data.meta.reference_available===false?'Historical reference not loaded. PPA and climatology will become available when it is added. NH extension awaits author validation.':`The PPA height-anomaly reference remains ${data.meta.anomaly_reference.join('–')}. Changing this comparison does not redefine detection. NH extension awaits author validation.`;
   }
   function periodTitle(){
     if(state.period==='daily')return dateLabel(state.date)+' · 00:00 UTC';
@@ -238,7 +246,7 @@
     $('stats-title').textContent=state.region?state.region.name:globalName;
     const bounds=state.region?state.region.bounds:null;
     $('stats-subtitle').textContent=state.region?`${state.region.hemisphere==='nh'?'Northern':'Southern'} Hemisphere · ${Math.min(Math.abs(bounds[1]),Math.abs(bounds[3]))}°–${Math.max(Math.abs(bounds[1]),Math.abs(bounds[3]))}°${state.region.hemisphere==='nh'?'N':'S'} · cosine-latitude weighting.`:`Area-weighted statistics across 30°–75° ${state.hemisphere==='both'?'in both hemispheres':state.hemisphere==='nh'?'N':'S'}.`;
-    const kpis=[[daily?'Blocked area':'Mean blocked area',pct(current),'%',(daily?dateLabel(state.date):statPeriod)+' · confirmed only'],['Regional blocked days',nonNull.length?String(activeDays):'—','days',statPeriod+' · ≥1 grid cell blocked · '+nonNull.length+' valid days'],['Equivalent blocked days',nonNull.length?equivalent.toFixed(1):'—','days',statPeriod+' · sum of daily blocked area fractions'],['Reference frequency',pct(reference),'%',state.reference.join('–')+' · mean daily blocked area']];
+    const kpis=[[daily?'Blocked area':'Mean blocked area',pct(current),'%',(daily?dateLabel(state.date):statPeriod)+' · confirmed only'],['Regional blocked days',nonNull.length?String(activeDays):'—','days',statPeriod+' · ≥1 grid cell blocked · '+nonNull.length+' valid days'],['Equivalent blocked days',nonNull.length?equivalent.toFixed(equivalent>0&&equivalent<1?3:1):'—','days',statPeriod+' · sum of daily blocked area fractions'],['Reference frequency',pct(reference),'%',data.meta.reference_available===false?'Historical reference not loaded':state.reference.join('–')+' · mean daily blocked area']];
     $('kpis').replaceChildren(...kpis.map((k,i)=>{const div=document.createElement('div');div.className='kpi';const label=document.createElement('div');label.className='kpi-label';label.textContent=k[0];const value=document.createElement('div');value.className='kpi-value';value.textContent=k[1];const small=document.createElement('small');small.textContent=k[2];value.append(small);const note=document.createElement('p');note.className='kpi-note';note.textContent=k[3];const accent=document.createElement('span');accent.className='kpi-accent';accent.textContent=['◌','▦','∑','∿'][i];div.append(label,value,note,accent);return div;}));
     renderSeries(series,yearIndices);renderMonthly(series);renderCalendar(series);
   }
@@ -283,7 +291,7 @@
     const w=440,h=245,p={l:32,r:7,t:13,b:31},x=d3.scaleBand().domain(d3.range(12)).range([p.l,w-p.r]).padding(.3),y=d3.scaleLinear().domain([0,Math.max(5,(d3.max([...current,...reference])||0)*1.18)]).nice().range([h-p.b,p.t]);
     chartAxes(svg,x,y,w,h,p,d3.range(12),i=>monthNames[i].slice(0,1));
     for(const [arr,color,offset] of [[reference,'#d5dfbd',.5],[current,'#54856b',0]])svg.append('g').selectAll('rect').data(arr.map((v,i)=>({v,i})).filter(d=>d.v!==null)).join('rect').attr('x',d=>x(d.i)+offset*x.bandwidth()).attr('y',d=>y(d.v)).attr('height',d=>y(0)-y(d.v)).attr('width',x.bandwidth()/2).attr('rx',1).attr('fill',color).append('title').text(d=>monthNames[d.i]+': '+pct(d.v)+'%');
-    $('monthly-year-label').textContent=state.year;$('monthly-ref-label').textContent=state.reference.join('–');
+    $('monthly-year-label').textContent=state.year;$('monthly-ref-label').textContent=data.meta.reference_available===false?'Reference unavailable':state.reference.join('–');
   }
   function renderCalendar(series){
     const svg=d3.select('#calendar-chart');svg.selectAll('*').remove();const w=1200,margin={l:35,t:26},cell=19,gap=3;
@@ -300,8 +308,9 @@
   function download(name,text,type){const url=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
   function exportCSV(){
     const series=getSeries(),name=state.region?.id||state.hemisphere+'-hemispheres';
-    const header=['date','method','region','blocked_area_percent','data_source','anomaly_reference','comparison_reference'];
-    const rows=data.dates.flatMap((d,i)=>+d.slice(0,4)===state.year?[[d,state.method,name,series[i]===null?'':series[i].toFixed(5),data.meta.source,data.meta.anomaly_reference.join('-'),state.reference.join('-')].join(',')]:[]);
+    const header=['date','method','region','blocked_area_percent','data_source','source_provider','anomaly_reference','comparison_reference'];
+    const refLoaded=data.meta.reference_available!==false;
+    const rows=data.dates.flatMap((d,i)=>+d.slice(0,4)===state.year?[[d,state.method,name,series[i]===null?'':series[i].toFixed(5),data.meta.source,data.meta.source_provider||'CDS',refLoaded?data.meta.anomaly_reference.join('-'):'not_loaded',refLoaded?state.reference.join('-'):'not_loaded'].join(',')]:[]);
     download(`blocking-${name}-${state.method}-${state.year}.csv`,[header.join(','),...rows].join('\n'),'text/csv;charset=utf-8');showToast('Daily regional record downloaded.');
   }
   function exportMap(){
@@ -319,7 +328,8 @@
   }
   try{
     if(!('DecompressionStream' in window))throw new Error('This preview needs a recent browser with gzip decompression support.');
-    data=decodeData(await unpack(window.BLOCKING_ERA5_GZIP||window.BLOCKING_PAYLOAD_GZIP));
+    if(!window.BLOCKING_ERA5_GZIP)throw new Error('The observed ERA5 archive is unavailable. The dashboard will not substitute demonstration data.');
+    data=decodeData(await unpack(window.BLOCKING_ERA5_GZIP));
     if(data.schema!==1)throw new Error('Unsupported data schema');
     ncell=data.grid.latitudes.length*data.grid.longitudes.length;
     dateIndex=new Map(data.dates.map((d,i)=>[d,i]));fieldIndex=new Map((data.fields?.dates||[]).map((d,i)=>[d,i]));allYears=[...new Set(data.dates.map(d=>+d.slice(0,4)))];
@@ -335,12 +345,15 @@
     if(['both','nh','sh'].includes(hash.get('hemisphere')))state.hemisphere=hash.get('hemisphere');
     const region=data.regions.find(r=>r.id===hash.get('region'));if(region){state.region=region;state.hemisphere=region.hemisphere;}
     const ref=(hash.get('reference')||'').split('-').map(Number);if(ref.length===2&&ref[0]<=ref[1]&&ref[0]>=allYears[0]&&dateIndex.has(ref[1]+'-12-31'))state.reference=ref;
+    const supportedMethods=data.meta.available_methods||['ppa','tr'];
+    if(!supportedMethods.includes(state.method))state.method=supportedMethods[0];
+    if(state.period==='climatology'&&data.meta.reference_available===false)state.period='daily';
     initControls();
     const synthetic=data.meta.source==='synthetic';
     $('data-notice').querySelector('strong').textContent=synthetic?'Demonstration data':'ERA5 / ERA5T';
-    $('notice-detail').textContent=synthetic?'Synthetic fields let you explore every control. These are not observed blocking conditions.':`Latest verified sample: ${dateLabel(data.meta.latest_date)}. ERA5T is preliminary and typically about five days delayed.`;
+    $('notice-detail').textContent=synthetic?'Synthetic fields let you explore every control. These are not observed blocking conditions.':`Latest verified sample: ${dateLabel(data.meta.latest_date)} · ${data.meta.source_provider||'Copernicus Climate Data Store'}. ${data.meta.reference_available===false?'Recent sample: TR and Z500 available; PPA and climatology await the historical reference.':'Recent ERA5T is preliminary.'}`;
     $('footer-status').textContent=`Unpublished · ${synthetic?'demonstration':dateLabel(data.meta.latest_date)}`;
-    $('dialog-data-state').textContent=synthetic?'This preview uses deterministic synthetic fields, not ERA5. Values demonstrate the interface and are not weather observations.':`Source: ERA5 pressure-level geopotential at 500 hPa. Latest sample: ${data.meta.latest_date} · ${data.meta.sample_time}. ERA5T may be revised. Detection grid: ${data.meta.grid_degrees}°.`;
+    $('dialog-data-state').textContent=synthetic?'This preview uses deterministic synthetic fields, not ERA5. Values demonstrate the interface and are not weather observations.':`Source: ${data.meta.source_provider||'Copernicus Climate Data Store'}; ERA5 pressure-level geopotential at 500 hPa. Latest sample: ${data.meta.latest_date} · ${data.meta.sample_time}. ERA5T may be revised. Detection grid: ${data.meta.grid_degrees}°${data.meta.native_grid_degrees?' sampled from '+data.meta.native_grid_degrees+'° fields':''}. ${data.meta.final_era5_through?'Finalized ERA5 through '+data.meta.final_era5_through+'.':''}`;
     update();$('loading').hidden=true;
     // Read-only diagnostics for review and automated quality checks.
     window.BlockingObservatory={state,data,selectRegion,update,getSeries,mapValues};

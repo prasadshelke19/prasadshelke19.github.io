@@ -14,7 +14,7 @@ Terms: https://www.naturalearthdata.com/about/terms-of-use/
 **ERA5 / ERA5T** (when the real pipeline is configured): Copernicus Climate
 Change Service (C3S), ECMWF. Pressure-level dataset:
 https://doi.org/10.24381/cds.bd0915c6
-The preview contains synthetic data only. No ERA5 observations are included.
+The current preview includes real ERA5 / preliminary ERA5T geopotential from Google Research’s public ARCO-ERA5 mirror: https://github.com/google-research/arco-era5 . The original synthetic development fixture is retained but is not loaded by the dashboard.
 
 **Research method:** Shelke & Renwick (2026), GRL,
 https://doi.org/10.1029/2025GL120428

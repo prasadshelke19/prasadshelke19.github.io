@@ -5,6 +5,7 @@ Processing uses yearly windows, with overlap across year boundaries.
 """
 from __future__ import annotations
 import argparse
+import json
 from datetime import datetime, timezone
 from pathlib import Path
 import numpy as np
@@ -135,6 +136,13 @@ def build(cache, output, reference=(1980, 2014), archive_start=None):
                 "nh_status": "mirrored extension; author validation pending", "missing_dates": missing_dates,
                 "regional_bounds_status": "editable illustrative boxes; not transcribed from paper Figure S1",
                 "preliminary": "Recent ERA5T may be revised; cache retrieval refreshes the most recent 100 days."}
+    provenance_path = Path(cache) / "source.json"
+    if provenance_path.exists():
+        provenance = json.loads(provenance_path.read_text())
+        metadata.update({"source_provider": provenance["provider"], "source_url": provenance["store"],
+                         "source_last_updated": provenance["source_attributes"]["last_updated"],
+                         "final_era5_through": provenance["final_era5_through"],
+                         "resampling": provenance["resampling"], "native_grid_degrees": provenance["native_grid_degrees"]})
     print(save_bundle(output, all_dates, output_lat, archive.longitude, {k: np.concatenate(v) for k, v in masks.items()}, metadata, fields, variable="BLOCKING_ERA5_GZIP"))
 
 

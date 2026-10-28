@@ -1,0 +1,47 @@
+{
+  "source": "ERA5/ERA5T",
+  "title": "Recent observed ERA5 sample",
+  "source_provider": "Google Research ARCO-ERA5 public mirror",
+  "source_url": "https://storage.googleapis.com/gcp-public-data-arco-era5/ar/full_37-1h-0p25deg-chunk-1.zarr-v3",
+  "source_last_updated": "2026-10-25 05:15:22.333497+00:00",
+  "dataset": "reanalysis-era5-pressure-levels",
+  "dataset_doi": "10.24381/cds.bd0915c6",
+  "generated_at": "2026-10-28T22:30:52.618510+00:00",
+  "latest_date": "2026-10-19",
+  "display_start": "2026-10-10",
+  "retrieved_start": "2026-10-01",
+  "anomaly_reference": [
+    1980,
+    2014
+  ],
+  "reference_available": false,
+  "available_methods": [
+    "tr"
+  ],
+  "available_fields": [
+    "z500"
+  ],
+  "coverage_note": "Recent observed sample only. Historical reference not loaded; PPA and climatology are unavailable.",
+  "sample_time": "00:00 UTC",
+  "grid_degrees": 5.0,
+  "native_grid_degrees": 0.25,
+  "resampling": "regular grid-point sampling of the 0.25 degree analysis-ready field",
+  "final_era5_through": "2026-06-30",
+  "methods": {
+    "ppa": {
+      "name": "Persistent positive anomaly",
+      "threshold_m": 100,
+      "persistence_days": 5
+    },
+    "tr": {
+      "name": "True reversal",
+      "delta_deg": 15,
+      "persistence_days": 4,
+      "equatorward_gradient_min": 0,
+      "poleward_gradient_max": -10,
+      "subtropical_gradient_max": -5
+    }
+  },
+  "nh_status": "mirrored extension; author validation pending",
+  "regional_bounds_status": "editable illustrative boxes; author review pending"
+}
