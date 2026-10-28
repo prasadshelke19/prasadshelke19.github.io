@@ -147,8 +147,8 @@
     if(!gridCache.has(key))gridCache.set(key,C.aggregateGrid(data,state.method,ix));
     return gridCache.get(key);
   }
-  const colors={anomaly:['#557b9c','#8badbf','#c6d9dc','#e8ede3','#e5dfaf','#d6b36a','#c58343','#a4562f','#7b382f'],frequency:['#edf1df','#d5e0b2','#adca8c','#7fa56c','#4d805c','#28694e','#16503f'],z500:['#9eafca','#adcfcb','#cbe1be','#dfe5b2','#e6d18d','#dca263','#be7151']};
-  function palette(){const layer=$('layer').value;if(layer==='anomaly')return{thresholds:[-300,-200,-100,-25,25,100,150,200,300],colors:colors.anomaly,label:'Z500 anomaly (m)'};if(layer==='z500')return{thresholds:[4800,5000,5200,5400,5600,5800,6000],colors:colors.z500,label:'Z500 height (m)'};return{thresholds:[1,5,10,20,40,60,80],colors:colors.frequency,label:state.period==='daily'?'Confirmed blocked area':'Blocking frequency (%)'};}
+  const colors={anomaly:['#557b9c','#8badbf','#c6d9dc','#e8ede3','#e5dfaf','#d6b36a','#c58343','#a4562f','#7b382f'],frequency:['#edf1df','#d5e0b2','#adca8c','#7fa56c','#4d805c','#28694e','#16503f'],z500:['#7e8cae','#9eafca','#adcfcb','#cbe1be','#dfe5b2','#e6d18d','#dca263','#be7151']};
+  function palette(){const layer=$('layer').value;if(layer==='anomaly')return{thresholds:[-300,-200,-100,-25,25,100,150,200,300],colors:colors.anomaly,label:'Z500 anomaly (m)'};if(layer==='z500')return{thresholds:[4500,4800,5000,5200,5400,5600,5800,6000],colors:colors.z500,label:'Z500 height (m)'};return{thresholds:[1,5,10,20,40,60,80],colors:colors.frequency,label:state.period==='daily'?'Confirmed blocked area':'Blocking frequency (%)'};}
   function renderMap(){
     const svg=d3.select('#world-map');svg.selectAll('*').remove();
     const width=1040,height=440,pad={l:43,r:19,t:15,b:27};
