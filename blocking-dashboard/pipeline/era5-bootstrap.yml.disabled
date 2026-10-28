@@ -1,0 +1,46 @@
+# INACTIVE REVIEW TEMPLATE: copy into .github/workflows only when authorized.
+# Manual jobs can fill the cache in year ranges; the daily workflow reuses it.
+# Configure CDSAPI_KEY as an encrypted repository secret before running.
+name: Bootstrap ERA5 blocking cache
+on:
+  workflow_dispatch:
+    inputs:
+      start_year:
+        description: First year to retrieve in this batch
+        required: true
+        default: '1980'
+      end_date:
+        description: Last date to retrieve in this batch (YYYY-MM-DD)
+        required: true
+        default: '1984-12-31'
+permissions:
+  contents: read
+concurrency:
+  group: era5-blocking-update
+  cancel-in-progress: false
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r blocking-dashboard/pipeline/requirements.txt
+      - uses: actions/cache/restore@v4
+        with:
+          path: working-data/era5
+          key: era5-z500-2p5-bootstrap-${{ github.run_id }}
+          restore-keys: era5-z500-2p5-
+      - name: Download the requested historical batch
+        env:
+          CDSAPI_KEY: ${{ secrets.CDSAPI_KEY }}
+          ERA5_START_YEAR: ${{ inputs.start_year }}
+          ERA5_END_DATE: ${{ inputs.end_date }}
+        run: python blocking-dashboard/pipeline/download_era5.py --start-year "$ERA5_START_YEAR" --end-date "$ERA5_END_DATE" --grid 2.5 --refresh-days 0
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: working-data/era5
+          key: era5-z500-2p5-bootstrap-${{ github.run_id }}
