@@ -6,6 +6,7 @@ Processing uses yearly windows, with overlap across year boundaries.
 from __future__ import annotations
 import argparse
 import json
+import hashlib
 from datetime import datetime, timezone
 from pathlib import Path
 import numpy as np
@@ -143,7 +144,34 @@ def build(cache, output, reference=(1980, 2014), archive_start=None):
                          "source_last_updated": provenance["source_attributes"]["last_updated"],
                          "final_era5_through": provenance["final_era5_through"],
                          "resampling": provenance["resampling"], "native_grid_degrees": provenance["native_grid_degrees"]})
-    print(save_bundle(output, all_dates, output_lat, archive.longitude, {k: np.concatenate(v) for k, v in masks.items()}, metadata, fields, variable="BLOCKING_ERA5_GZIP"))
+    metadata.update({"reference_available": True, "available_methods": ["ppa", "tr"],
+                     "available_fields": ["z500", "anomaly"], "display_start": str(all_dates[0]),
+                     "archive_days": len(all_dates),
+                     "coverage_note": "Daily blocking masks throughout the archive; height/anomaly layers for the latest calendar year.",
+                     "retention": "Historical raw fields may be removed after verifying and saving the compact products. The fixed height climatology is retained separately."})
+    output = Path(output)
+    products = {k: np.concatenate(v) for k, v in masks.items()}
+    result = save_bundle(output, all_dates, output_lat, archive.longitude, products, metadata, fields, variable="BLOCKING_ERA5_GZIP")
+    # Keep the exact float32 height reference, rather than requiring another
+    # 35-year download for incremental PPA updates after deleting raw fields.
+    reference_path = output.parent / "era5-height-reference.npz"
+    temporary = reference_path.with_suffix(".tmp.npz")
+    np.savez_compressed(temporary, z500_climatology=climate, sample_counts=count,
+                        latitude=archive.latitude, longitude=archive.longitude,
+                        reference_years=np.asarray(reference, dtype=np.int16),
+                        units=np.asarray("geopotential metres"), sample_time=np.asarray("00:00 UTC"),
+                        leap_day_rule=np.asarray("mean of February 28 and March 1"))
+    temporary.replace(reference_path)
+    (output.parent / "era5-provenance.json").write_text(json.dumps(metadata, indent=2) + "\n")
+    manifest = {"schema": 1, "archive_start": str(all_dates[0]), "archive_end": str(end_date),
+                "days": len(all_dates), "missing_dates": missing_dates, "anomaly_reference": list(reference),
+                "products": {}}
+    for path in [output, reference_path, output.parent / "era5-provenance.json"]:
+        manifest["products"][path.name] = {"bytes": path.stat().st_size,
+                                             "sha256": hashlib.sha256(path.read_bytes()).hexdigest()}
+    (output.parent / "era5-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    print({"start": str(all_dates[0]), "end": str(end_date), "days": len(all_dates), **result})
+    return manifest
 
 
 def main():
@@ -159,3 +187,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
