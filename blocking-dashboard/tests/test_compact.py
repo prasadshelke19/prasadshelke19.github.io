@@ -53,6 +53,9 @@ def test_recent_only_refresh_matches_full_rebuild_across_year_boundary(tmp_path,
     assert actual["meta"]["anomaly_reference"] == [2024, 2024]
     assert actual["meta"]["reference_available"] is True
     assert verify(old_file.parent)["status"] == "passed"
+    raw_report = verify(full_file.parent, full_cache)
+    assert raw_report["status"] == "passed"
+    assert len(raw_report["independent_raw_checks"]) == 1
     if old_end == "2026-01-05":
         assert old["masks"]["pending_ppa"][-1].any()
         assert actual["masks"]["ppa"][-8:].any()
@@ -70,3 +73,25 @@ def test_missing_recent_month_preserves_existing_archive(tmp_path):
     with pytest.raises(ValueError, match="missing dates"):
         update(recent, output)
     assert output.read_bytes() == before
+
+
+def test_bounded_refresh_uses_retained_reference_and_removes_only_its_temporary_cache(tmp_path, monkeypatch):
+    import refresh_arco
+    old_cache = tmp_path / "old"
+    cache_fixture(old_cache, "2024-01-01", "2026-01-05")
+    output = tmp_path / "data" / "era5.js"
+    build(old_cache, output, (2024, 2024))
+    downloaded = []
+    monkeypatch.setattr(refresh_arco, "get_json", lambda _: {"valid_time_stop": "2025-09-30", "valid_time_stop_era5t": "2026-01-10"})
+    def fake_retrieve(cache, start, end, **kwargs):
+        assert kwargs["workers"] == 2
+        assert kwargs["max_transfer_mb"] == 500
+        cache.rmdir()  # fixture creates its own directory
+        cache_fixture(cache, start, end)
+        downloaded.append(cache)
+    monkeypatch.setattr(refresh_arco, "retrieve", fake_retrieve)
+    report = refresh_arco.refresh(output)
+    assert report["archive_end"] == "2026-01-10"
+    assert not downloaded[0].exists()
+    assert (old_cache / "era5-z500-2024-01.nc").exists()
+    assert verify(output.parent)["status"] == "passed"

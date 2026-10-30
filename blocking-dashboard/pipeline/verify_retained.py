@@ -112,7 +112,7 @@ def verify(directory, cache=None):
               "retained_bytes": sum(p["bytes"] for p in manifest["products"].values())}
     if cache:
         checks = []
-        if dates[0] <= np.datetime64("2020-06-01") <= dates[-1]:
+        if dates[0] <= np.datetime64("2020-06-01") and dates[-1] >= np.datetime64("2020-08-31"):
             checks.append(cross_check(data, reference, cache, "2020-06-01", "2020-08-31"))
         checks.append(cross_check(data, reference, cache, str(dates[-1] - 13), str(dates[-1])))
         report["independent_raw_checks"] = checks

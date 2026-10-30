@@ -114,7 +114,7 @@ To request the mirror's latest rolling sample, omit `--start` and `--end`.
 The downloader then uses the latest 19 verified dates; the exporter displays
 10 days with earlier observations available to test persistence.
 
-## Historical backfill — pending approval
+## Historical backfill — authorized recovery run
 
 A complete historical record is required for PPA, arbitrary climatological
 comparisons and full-year statistics. Header-only probes of six representative
@@ -123,23 +123,34 @@ source dates estimate **about 41 GB** of public-mirror network transfer for
 **182 MB** before filesystem/compression overhead; byte-range extraction does
 not retain the much larger full-resolution source chunks.
 
-The original high-concurrency historical download was rejected by automatic
-approval review before transfer. **It has not been run.** A proposed replacement
-is capped at **50 GB**, with **2 workers** and resumable monthly checkpoints.
-The cap bounds transfer; reaching it stops the job and preserves complete
-cached months. This larger run awaits user approval.
+The user authorized the bounded historical download and removal of raw fields
+after retaining and verifying the compact outputs. An earlier chat reported a
+completed historical build, but its update was not saved to this branch before
+the chat failed. The recovery run is capped at **50 GB**, with **2 workers** and
+resumable monthly checkpoints. The cap bounds transfer; reaching it stops the
+job and preserves complete cached months.
 
-After that approval, the concrete backfill commands would be:
+The concrete recovery commands are:
 
 ```bash
-python blocking-dashboard/pipeline/download_arco.py --cache working-data/era5-arco-5deg --start 1979-12-22 --end 2026-10-19 --grid 5 --workers 2 --max-transfer-mb 50000 --max-days 17200
+python blocking-dashboard/pipeline/download_arco.py --cache working-data/era5-arco-5deg --start 1979-12-22 --end 2026-10-23 --grid 5 --workers 2 --max-transfer-mb 50000 --max-days 17200
 python blocking-dashboard/pipeline/build_data.py --cache working-data/era5-arco-5deg --archive-start 1980 --reference-start 1980 --reference-end 2014
 ```
 
 The December 1979 halo supports January 1980 persistence; the exported archive
 starts in 1980. The complete exporter enables both methods and comparison
-controls automatically. A failed or incomplete build retains the existing
-observed-data asset.
+controls automatically. It also saves the exact float32 fixed height reference
+in `data/era5-height-reference.npz` and checksums in `data/era5-manifest.json`.
+`verify_retained.py` checks coverage, checksums and masks; with `--cache`, it
+independently recomputes historical and recent PPA/TR masks before raw deletion.
+`update_compact.py` can merge a recent raw window into the retained history
+without downloading the historical record again. `refresh_arco.py` wraps this
+in a bounded keyless refresh: two workers, 500 MB and at most 180 daily samples,
+with all previously preliminary dates refreshed. It stages and verifies the
+updated products before replacing the browser archive and removes its own
+temporary raw cache only after success. A ten-day halo protects
+persistence across the replacement boundary; original files are preserved
+when the recent cache has gaps. Daily update templates remain inactive.
 
 A CDS alternative is retained in `download_era5.py` and the disabled CDS
 workflow templates. That alternative needs an accepted CDS dataset licence
@@ -168,3 +179,18 @@ validation against the author's original NH/SH implementation.
 Map geography is Natural Earth 1:110m public-domain land. D3 7.9.0 is ISC-
 licensed. The interaction concept is inspired by [Extreme Weather Data and
 Visualization Hub](https://extremewx.org/). See `THIRD_PARTY.md`.
+
+
+### Compact-archive verification and a single manual refresh
+
+```bash
+python blocking-dashboard/pipeline/verify_retained.py --cache working-data/era5-arco-5deg
+python blocking-dashboard/pipeline/refresh_arco.py
+```
+
+The first command is run before removing the historical raw cache. Later, the
+second command reads the retained height reference and only downloads a recent
+window. It does not enable a schedule, commit to GitHub, or publish a website.
+The saved masks preserve custom blocking-frequency climatologies. Changing the
+fixed PPA height reference or detection algorithm later requires raw-data
+reprocessing; it cannot be reconstructed from blocking statistics alone.
